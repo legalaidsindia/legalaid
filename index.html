@@ -334,6 +334,12 @@
                     <button class="tabs__btn tab-btn" data-tab="library">
                         <i data-lucide="folder-open" class="icon-sm"></i> Master Library
                     </button>
+                    <button class="tabs__btn tab-btn" data-tab="calculators">
+                        <i data-lucide="calculator" class="icon-sm"></i> Legal Calculators
+                    </button>
+                    <button class="tabs__btn tab-btn" data-tab="diagnoser">
+                        <i data-lucide="shield-alert" class="icon-sm"></i> Case Diagnoser
+                    </button>
                 </div>
 
                 <div class="tabs__content tab-content-container">
@@ -489,6 +495,203 @@
                                     <p style="color: var(--text-secondary); max-width: 400px; line-height: 1.6; font-size: 0.875rem;">Select a document category and draft from the left panel, or search for keywords to preview, copy, or download templates instantly.</p>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+
+                    <!-- Legal Calculators Tab -->
+                    <div class="tabs__panel tab-content" id="tab-calculators">
+                        <div class="glass-panel" style="padding:var(--space-8);display:grid;grid-template-columns:1fr;gap:var(--space-8);">
+                            <div>
+                                <h3 style="font-family:var(--font-heading);font-size:1.375rem;color:var(--text-primary);margin-bottom:var(--space-3);">Interactive Legal Calculators</h3>
+                                <p style="color:var(--text-secondary);line-height:1.7;margin-bottom:var(--space-4);">Estimate court fees, stamp duty, registration charges, and limitation periods instantly according to Indian legislation.</p>
+                                <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);margin-bottom:var(--space-4);">
+                                    <span class="badge">Stamp Duty Calculator</span>
+                                    <span class="badge badge--blue">Court Fee Estimator</span>
+                                    <span class="badge">Limitation Calculator</span>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="form-group">
+                                    <label class="form-group__label">Choose Calculator Type</label>
+                                    <select class="form-group__select" id="calculator-selector">
+                                        <option value="stamp">Stamp Duty &amp; Registration Fee</option>
+                                        <option value="court">Civil Court Fee Estimator</option>
+                                        <option value="limitation">Limitation Period Advisor</option>
+                                    </select>
+                                </div>
+
+                                <!-- Stamp Duty Sub-Form -->
+                                <div id="calc-stamp-form" class="calc-sub-form">
+                                    <div class="form-group">
+                                        <label class="form-group__label">Property Value (in ₹)</label>
+                                        <input type="number" class="form-group__input" id="calc-property-value" value="2500000" placeholder="e.g. 2500000">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-group__label">Select State</label>
+                                        <select class="form-group__select" id="calc-stamp-state">
+                                            <option value="delhi">Delhi (Stamp Duty: 6% Male, 4% Female)</option>
+                                            <option value="maharashtra">Maharashtra (Stamp Duty: 6% General)</option>
+                                            <option value="karnataka">Karnataka (Stamp Duty: 5% General)</option>
+                                            <option value="tamilnadu">Tamil Nadu (Stamp Duty: 7% General)</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-group__label">Buyer Gender / Ownership</label>
+                                        <select class="form-group__select" id="calc-buyer-type">
+                                            <option value="male">Male Buyer</option>
+                                            <option value="female">Female Buyer</option>
+                                            <option value="joint">Joint (Male + Female)</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <!-- Court Fee Sub-Form (hidden initially) -->
+                                <div id="calc-court-form" class="calc-sub-form" style="display:none;">
+                                    <div class="form-group">
+                                        <label class="form-group__label">Suit Valuation / Claim Amount (in ₹)</label>
+                                        <input type="number" class="form-group__input" id="calc-court-valuation" value="500000" placeholder="e.g. 500000">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-group__label">Nature of Suit</label>
+                                        <select class="form-group__select" id="calc-court-type">
+                                            <option value="money">Suit for Recovery of Money</option>
+                                            <option value="property">Suit for Possession of Immovable Property</option>
+                                            <option value="injunction">Suit for Declaration &amp; Injunction</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <!-- Limitation Period Sub-Form (hidden initially) -->
+                                <div id="calc-limitation-form" class="calc-sub-form" style="display:none;">
+                                    <div class="form-group">
+                                        <label class="form-group__label">Date Cause of Action Arose</label>
+                                        <input type="date" class="form-group__input" id="calc-limitation-date">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-group__label">Type of Legal Case</label>
+                                        <select class="form-group__select" id="calc-limitation-type">
+                                            <option value="bill">Suit on Bill of Exchange / Cheque Bounce (3 Years)</option>
+                                            <option value="contract">Suit for Breach of Contract (3 Years)</option>
+                                            <option value="possession">Suit for Recovery of Land/Property (12 Years)</option>
+                                            <option value="tort">Suit for Damages / Torts (1 Year)</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <button class="btn btn-primary" id="calculate-btn" type="button" style="margin-top:var(--space-4); width:100%;">
+                                    📊 Calculate Estimate
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Calculator Results Area -->
+                        <div id="calculator-results" style="display:none; margin-top:var(--space-6);" class="glass-panel">
+                            <!-- Populated dynamically via JS -->
+                        </div>
+                    </div>
+
+                    <!-- Case Diagnoser Tab -->
+                    <div class="tabs__panel tab-content" id="tab-diagnoser">
+                        <div class="glass-panel" style="padding:var(--space-8);display:grid;grid-template-columns:1fr;gap:var(--space-8);">
+                            <div>
+                                <h3 style="font-family:var(--font-heading);font-size:1.375rem;color:var(--text-primary);margin-bottom:var(--space-3);">Case Diagnoser &amp; Legal Intake Wizard</h3>
+                                <p style="color:var(--text-secondary);line-height:1.7;margin-bottom:var(--space-4);">Unsure of your legal options? Answer a few questions about your dispute to diagnose your path, estimate jurisdiction, and find the right forms.</p>
+                                <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);margin-bottom:var(--space-4);">
+                                    <span class="badge">Intake Guide</span>
+                                    <span class="badge badge--blue">Jurisdiction Advisor</span>
+                                    <span class="badge">Action Recommender</span>
+                                </div>
+                            </div>
+                            <div>
+                                <!-- Multi-step Question Container -->
+                                <div id="diagnoser-wizard">
+                                    <!-- Step 1 -->
+                                    <div class="diagnoser-step" id="diag-step-1">
+                                        <div class="form-group">
+                                            <label class="form-group__label">Step 1: What is the nature of your legal dispute?</label>
+                                            <select class="form-group__select" id="diag-dispute-type">
+                                                <option value="">Select Dispute Area</option>
+                                                <option value="consumer">Consumer Protection (Product/Service Defect)</option>
+                                                <option value="tenancy">Tenancy / Landlord-Tenant Dispute</option>
+                                                <option value="monetary">Monetary recovery / Debt claims</option>
+                                                <option value="criminal">Criminal offence / Police report</option>
+                                            </select>
+                                        </div>
+                                        <button class="btn btn-primary" id="diag-next-1" type="button" style="width:100%;">
+                                            Next Question <i data-lucide="arrow-right" class="icon-sm"></i>
+                                        </button>
+                                    </div>
+
+                                    <!-- Step 2 (Consumer subquestions) -->
+                                    <div class="diagnoser-step" id="diag-step-2-consumer" style="display:none;">
+                                        <div class="form-group">
+                                            <label class="form-group__label">Step 2: What is the total claim value (Product price + Damages)?</label>
+                                            <select class="form-group__select" id="diag-consumer-value">
+                                                <option value="district">Under ₹50 Lakhs</option>
+                                                <option value="state">₹50 Lakhs to ₹2 Crores</option>
+                                                <option value="national">Above ₹2 Crores</option>
+                                            </select>
+                                        </div>
+                                        <div style="display:flex; gap:var(--space-3);">
+                                            <button class="btn btn-glass diag-back" type="button" style="flex:1;">Back</button>
+                                            <button class="btn btn-primary diag-submit" data-type="consumer" type="button" style="flex:2;">Diagnose Dispute</button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Step 2 (Tenancy subquestions) -->
+                                    <div class="diagnoser-step" id="diag-step-2-tenancy" style="display:none;">
+                                        <div class="form-group">
+                                            <label class="form-group__label">Step 2: Has the written lease term expired or notice period served?</label>
+                                            <select class="form-group__select" id="diag-tenancy-status">
+                                                <option value="notice_needed">No Notice has been served yet</option>
+                                                <option value="notice_served">Notice served, tenant refuses to leave</option>
+                                                <option value="nonpayment">Lease is active, but tenant refuses to pay rent</option>
+                                            </select>
+                                        </div>
+                                        <div style="display:flex; gap:var(--space-3);">
+                                            <button class="btn btn-glass diag-back" type="button" style="flex:1;">Back</button>
+                                            <button class="btn btn-primary diag-submit" data-type="tenancy" type="button" style="flex:2;">Diagnose Dispute</button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Step 2 (Monetary subquestions) -->
+                                    <div class="diagnoser-step" id="diag-step-2-monetary" style="display:none;">
+                                        <div class="form-group">
+                                            <label class="form-group__label">Step 2: Is there a signed contract, cheque, or promissory note?</label>
+                                            <select class="form-group__select" id="diag-monetary-proof">
+                                                <option value="cheque">Dishonoured Cheque / Cheque Bounce</option>
+                                                <option value="written">Written Loan / Purchase Contract</option>
+                                                <option value="oral">Oral Agreement / Loose Ledger / Bills only</option>
+                                            </select>
+                                        </div>
+                                        <div style="display:flex; gap:var(--space-3);">
+                                            <button class="btn btn-glass diag-back" type="button" style="flex:1;">Back</button>
+                                            <button class="btn btn-primary diag-submit" data-type="monetary" type="button" style="flex:2;">Diagnose Dispute</button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Step 2 (Criminal subquestions) -->
+                                    <div class="diagnoser-step" id="diag-step-2-criminal" style="display:none;">
+                                        <div class="form-group">
+                                            <label class="form-group__label">Step 2: Is the offender known, and is there immediate danger?</label>
+                                            <select class="form-group__select" id="diag-criminal-danger">
+                                                <option value="danger">Yes, active threat / physical assault / ongoing crime</option>
+                                                <option value="cyber">Cyber Fraud / Online financial theft</option>
+                                                <option value="theft">Property theft / burglary (happened in past)</option>
+                                            </select>
+                                        </div>
+                                        <div style="display:flex; gap:var(--space-3);">
+                                            <button class="btn btn-glass diag-back" type="button" style="flex:1;">Back</button>
+                                            <button class="btn btn-primary diag-submit" data-type="criminal" type="button" style="flex:2;">Diagnose Dispute</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Diagnoser Diagnosis Area -->
+                        <div id="diagnoser-results" style="display:none; margin-top:var(--space-6);" class="glass-panel">
+                            <!-- Populated dynamically via JS -->
                         </div>
                     </div>
                 </div>

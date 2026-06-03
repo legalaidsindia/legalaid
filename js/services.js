@@ -24,6 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initLawyerFilters();
   initServiceCardInteractions();
   initLibraryTab();
+  initCalculators();
+  initDiagnoser();
 });
 
 /* -----------------------------------------------------------------------
@@ -1218,3 +1220,370 @@ function initLibraryTab() {
     }
   }
 }
+
+/* -----------------------------------------------------------------------
+   7. Legal Calculators Suite
+   ----------------------------------------------------------------------- */
+
+function initCalculators() {
+  const selector = document.getElementById('calculator-selector');
+  const calculateBtn = document.getElementById('calculate-btn');
+  const resultsDiv = document.getElementById('calculator-results');
+
+  if (!selector || !calculateBtn || !resultsDiv) return;
+
+  // Handle calculator sub-form switching
+  selector.addEventListener('change', () => {
+    const val = selector.value;
+    document.querySelectorAll('.calc-sub-form').forEach(el => el.style.display = 'none');
+    resultsDiv.style.display = 'none';
+
+    if (val === 'stamp') {
+      document.getElementById('calc-stamp-form').style.display = 'block';
+    } else if (val === 'court') {
+      document.getElementById('calc-court-form').style.display = 'block';
+    } else if (val === 'limitation') {
+      document.getElementById('calc-limitation-form').style.display = 'block';
+      const dateInput = document.getElementById('calc-limitation-date');
+      if (dateInput && !dateInput.value) {
+        dateInput.value = new Date().toISOString().split('T')[0];
+      }
+    }
+  });
+
+  // Handle calculation action
+  calculateBtn.addEventListener('click', () => {
+    const calcType = selector.value;
+    resultsDiv.style.display = 'block';
+
+    if (calcType === 'stamp') {
+      const propertyVal = parseFloat(document.getElementById('calc-property-value').value) || 0;
+      const state = document.getElementById('calc-stamp-state').value;
+      const buyerType = document.getElementById('calc-buyer-type').value;
+
+      let stampRate = 0.05;
+      let stateName = "General State Slabs";
+
+      if (state === 'delhi') {
+        stateName = "National Capital Territory of Delhi";
+        stampRate = buyerType === 'female' ? 0.04 : buyerType === 'male' ? 0.06 : 0.05;
+      } else if (state === 'maharashtra') {
+        stateName = "State of Maharashtra";
+        stampRate = 0.06;
+      } else if (state === 'karnataka') {
+        stateName = "State of Karnataka";
+        stampRate = 0.05;
+      } else if (state === 'tamilnadu') {
+        stateName = "State of Tamil Nadu";
+        stampRate = 0.07;
+      }
+
+      const stampDuty = propertyVal * stampRate;
+      const regFee = propertyVal * 0.01;
+      const totalCharges = stampDuty + regFee;
+
+      resultsDiv.innerHTML = `
+        <h4 style="color:var(--accent-gold); font-family:var(--font-heading); font-size:1.25rem; margin-bottom:var(--space-3);">Calculated Property Charges</h4>
+        <p style="color:var(--text-muted); font-size:0.875rem; margin-bottom:var(--space-4);">Estimates based on current stamp laws for: <strong>${stateName}</strong></p>
+        
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap:var(--space-4); margin-bottom:var(--space-4);">
+          <div style="background:rgba(255,255,255,0.02); padding:var(--space-4); border:1px solid var(--border-glass); border-radius:var(--radius-sm); text-align:center;">
+            <span style="font-size:0.75rem; text-transform:uppercase; color:var(--text-muted); display:block; margin-bottom:2px;">Stamp Duty (${(stampRate * 100).toFixed(1)}%)</span>
+            <strong style="font-size:1.25rem; color:var(--accent-gold); font-family:var(--font-heading);">₹${stampDuty.toLocaleString('en-IN')}</strong>
+          </div>
+          <div style="background:rgba(255,255,255,0.02); padding:var(--space-4); border:1px solid var(--border-glass); border-radius:var(--radius-sm); text-align:center;">
+            <span style="font-size:0.75rem; text-transform:uppercase; color:var(--text-muted); display:block; margin-bottom:2px;">Registration Fee (1.0%)</span>
+            <strong style="font-size:1.25rem; color:var(--text-primary); font-family:var(--font-heading);">₹${regFee.toLocaleString('en-IN')}</strong>
+          </div>
+        </div>
+
+        <div style="padding:var(--space-4); border-top:1px solid var(--border-glass); display:flex; justify-content:space-between; align-items:center;">
+          <span style="color:var(--text-secondary); font-weight:var(--fw-semibold);">Estimated Total Payable:</span>
+          <strong style="font-size:1.5rem; color:var(--accent-gold); font-family:var(--font-heading);">₹${totalCharges.toLocaleString('en-IN')}</strong>
+        </div>
+      `;
+    } else if (calcType === 'court') {
+      const valuation = parseFloat(document.getElementById('calc-court-valuation').value) || 0;
+      let courtFee = 0;
+      let breakdown = "";
+
+      if (valuation <= 50000) {
+        courtFee = valuation * 0.025;
+        breakdown = "2.5% Ad Valorem Flat fee on values under ₹50,000";
+      } else if (valuation <= 200000) {
+        courtFee = 1250 + (valuation - 50000) * 0.05;
+        breakdown = "₹1,250 (first ₹50K) + 5.0% on valuation exceeding ₹50,000";
+      } else if (valuation <= 500000) {
+        courtFee = 8750 + (valuation - 200000) * 0.075;
+        breakdown = "₹8,750 (first ₹200K) + 7.5% on valuation exceeding ₹200,000";
+      } else {
+        courtFee = 31250 + (valuation - 500000) * 0.10;
+        if (courtFee > 150000) {
+          courtFee = 150000;
+          breakdown = "10% on valuation exceeding ₹500,000 (Capped at Maximum ₹1,50,000 Court Fees)";
+        } else {
+          breakdown = "₹31,250 (first ₹500K) + 10% on valuation exceeding ₹500,000";
+        }
+      }
+
+      resultsDiv.innerHTML = `
+        <h4 style="color:var(--accent-gold); font-family:var(--font-heading); font-size:1.25rem; margin-bottom:var(--space-3);">Calculated Court Fees</h4>
+        <p style="color:var(--text-muted); font-size:0.875rem; margin-bottom:var(--space-4);">Estimate based on the Court Fees Act, 1870 and state rules.</p>
+        
+        <div style="background:rgba(255,255,255,0.02); padding:var(--space-4); border:1px solid var(--border-glass); border-radius:var(--radius-sm); display:flex; justify-content:space-between; align-items:center; margin-bottom:var(--space-4);">
+          <div>
+            <span style="color:var(--text-secondary); font-size:0.875rem; display:block; margin-bottom:2px;">Ad Valorem Court Fee Payable</span>
+            <small style="color:var(--text-muted); font-size:0.75rem; display:block;">Calculation Method: ${breakdown}</small>
+          </div>
+          <strong style="font-size:1.5rem; color:var(--accent-gold); font-family:var(--font-heading);">₹${courtFee.toLocaleString('en-IN')}</strong>
+        </div>
+
+        <div style="border-top: 1px solid var(--border-glass); padding-top: var(--space-4);">
+          <h5 style="font-size:0.8125rem; color:var(--text-primary); text-transform:uppercase; letter-spacing:0.05em; font-weight:var(--fw-semibold); margin-bottom:var(--space-2);">Filing Guidelines</h5>
+          <ul style="color:var(--text-secondary); font-size:0.8125rem; padding-left:1.2rem; line-height:1.6;">
+            <li>Court fees must be paid via non-judicial stamp papers or e-court fee receipts.</li>
+            <li>In recovery suits, the fee is calculated directly on the total claimed amount (Principal + Interest).</li>
+            <li>For Injunctions and Declarations, flat court fees can apply depending on local state amendments (usually ₹200–₹500).</li>
+          </ul>
+        </div>
+      `;
+    } else if (calcType === 'limitation') {
+      const dateVal = document.getElementById('calc-limitation-date').value;
+      const caseType = document.getElementById('calc-limitation-type').value;
+
+      if (!dateVal) {
+        resultsDiv.innerHTML = `<p style="color:var(--error); text-align:center;">Please select the date when the cause of action arose.</p>`;
+        return;
+      }
+
+      const actionDate = new Date(dateVal);
+      const today = new Date();
+      const diffTime = Math.abs(today - actionDate);
+      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+      const diffYears = diffDays / 365.25;
+
+      let limitYears = 3;
+      let limitLabel = "3 Years (General Limitation)";
+
+      if (caseType === 'possession') {
+        limitYears = 12;
+        limitLabel = "12 Years (Recovery of Immovable Property)";
+      } else if (caseType === 'tort') {
+        limitYears = 1;
+        limitLabel = "1 Year (Tort Claims / Damages)";
+      } else if (caseType === 'bill') {
+        limitYears = 3;
+        limitLabel = "3 Years (Negotiable Instruments / Cheque Bounce)";
+      }
+
+      const isExpired = diffYears > limitYears;
+      const daysLeft = Math.max(0, Math.floor((limitYears * 365.25) - diffDays));
+
+      resultsDiv.innerHTML = `
+        <h4 style="color:var(--accent-gold); font-family:var(--font-heading); font-size:1.25rem; margin-bottom:var(--space-3);">Limitation Period Assessment</h4>
+        <p style="color:var(--text-muted); font-size:0.875rem; margin-bottom:var(--space-4);">Estimate based on the Limitation Act, 1963.</p>
+        
+        <div style="background:rgba(255,255,255,0.02); padding:var(--space-4); border:1px solid var(--border-glass); border-radius:var(--radius-sm); display:flex; justify-content:space-between; align-items:center; margin-bottom:var(--space-4); border-left: 4px solid ${isExpired ? 'var(--error)' : 'var(--success)'};">
+          <div>
+            <span style="color:var(--text-secondary); font-size:0.875rem; display:block; margin-bottom:2px;">Filing Status:</span>
+            <strong style="color:${isExpired ? 'var(--error)' : 'var(--success)'}; font-size:1rem; text-transform:uppercase;">
+              ${isExpired ? '⚠️ Time Barred (Expired)' : '✅ Within Limitation Period'}
+            </strong>
+          </div>
+          <div style="text-align:right;">
+            <span style="font-size:0.75rem; color:var(--text-muted); display:block;">Limitation Period:</span>
+            <strong style="color:var(--text-primary); font-size:0.875rem;">${limitLabel}</strong>
+          </div>
+        </div>
+
+        <div style="border-top: 1px solid var(--border-glass); padding-top: var(--space-4); font-size: 0.8125rem; color: var(--text-secondary); line-height: 1.6;">
+          ${isExpired 
+            ? `<strong>Warning:</strong> Based on the input date, the case exceeds the statutory limitation period of ${limitYears} year(s). Filing a case now may face immediate rejection under Section 3 of the Limitation Act, unless Condonation of Delay (Section 5) is filed and approved with sufficient cause.`
+            : `<strong>Status Check:</strong> You have approximately <strong>${daysLeft} days</strong> left to file your suit in court. Please consult an advocate to draft and file before the deadline.`}
+        </div>
+      `;
+    }
+  });
+}
+
+/* -----------------------------------------------------------------------
+   8. Case Diagnoser & Legal Intake Wizard
+   ----------------------------------------------------------------------- */
+
+function initDiagnoser() {
+  const disputeType = document.getElementById('diag-dispute-type');
+  const nextBtn = document.getElementById('diag-next-1');
+  const resultsDiv = document.getElementById('diagnoser-results');
+
+  if (!disputeType || !nextBtn || !resultsDiv) return;
+
+  nextBtn.addEventListener('click', () => {
+    const val = disputeType.value;
+    if (!val) {
+      alert("Please select a dispute area first.");
+      return;
+    }
+
+    document.getElementById('diag-step-1').style.display = 'none';
+
+    document.querySelectorAll('.diagnoser-step').forEach(el => {
+      if (el.id !== 'diag-step-1') el.style.display = 'none';
+    });
+
+    const targetStep = `diag-step-2-${val}`;
+    const targetEl = document.getElementById(targetStep);
+    if (targetEl) {
+      targetEl.style.display = 'block';
+    }
+  });
+
+  document.querySelectorAll('.diag-back').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.diagnoser-step').forEach(el => el.style.display = 'none');
+      resultsDiv.style.display = 'none';
+      document.getElementById('diag-step-1').style.display = 'block';
+    });
+  });
+
+  document.querySelectorAll('.diag-submit').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const type = btn.dataset.type;
+      resultsDiv.style.display = 'block';
+
+      if (type === 'consumer') {
+        const val = document.getElementById('diag-consumer-value').value;
+        let forum = "District Consumer Commission";
+        let limit = "Under ₹50 Lakhs";
+        let act = "Section 34 of the Consumer Protection Act, 2019";
+        let instructions = "Send a formal demand notice to the service provider first, giving them 15 days to resolve. If they refuse, file a petition on the E-Daakhil portal (edaakhil.nic.in).";
+
+        if (val === 'state') {
+          forum = "State Consumer Disputes Redressal Commission";
+          limit = "₹50 Lakhs to ₹2 Crores";
+          act = "Section 47 of the Consumer Protection Act, 2019";
+        } else if (val === 'national') {
+          forum = "National Consumer Disputes Redressal Commission (New Delhi)";
+          limit = "Exceeding ₹2 Crores";
+          act = "Section 58 of the Consumer Protection Act, 2019";
+        }
+
+        resultsDiv.innerHTML = `
+          <h4 style="color:var(--accent-gold); font-family:var(--font-heading); font-size:1.25rem; margin-bottom:var(--space-2);">Consumer Dispute Diagnosis</h4>
+          <span style="font-size:0.6875rem; text-transform:uppercase; background:rgba(59,130,246,0.15); border:1px solid rgba(59,130,246,0.2); padding: 2px 6px; border-radius:4px; color:var(--accent-blue-light); display:inline-block; margin-bottom:var(--space-3);">JURISDICTION ESTIMATE</span>
+          
+          <p style="color:var(--text-secondary); font-size:0.9375rem; line-height:1.6; margin-bottom:var(--space-4);">
+            Your case falls under the Pecuniary Jurisdiction of the <strong>${forum}</strong> (Claims value ${limit}) under ${act}.
+          </p>
+
+          <div style="background:rgba(255,255,255,0.02); padding:var(--space-4); border:1px solid var(--border-glass); border-radius:var(--radius-sm); margin-bottom:var(--space-4); font-size:0.875rem; line-height:1.6; color:var(--text-primary);">
+            <strong>Recommended Strategy:</strong>
+            <p style="color:var(--text-muted); margin-top:4px;">${instructions}</p>
+          </div>
+
+          <div style="border-top:1px solid var(--border-glass); padding-top:var(--space-4); display:flex; gap:var(--space-3);">
+            <button class="btn btn-primary" onclick="document.querySelector('[data-tab=notices]').click();" style="font-size:0.75rem; padding:var(--space-2) var(--space-4);">
+              🚀 Draft Demand Notice
+            </button>
+            <button class="btn btn-outline" onclick="document.querySelector('[data-tab=library]').click(); document.getElementById('library-cat-select').value='Consumer protection act'; document.getElementById('library-cat-select').dispatchEvent(new Event('change'));" style="font-size:0.75rem; padding:var(--space-2) var(--space-4);">
+              📂 Browse Consumer Templates
+            </button>
+          </div>
+        `;
+      } else if (type === 'tenancy') {
+        const status = document.getElementById('diag-tenancy-status').value;
+        let actionTitle = "Send Eviction Notice";
+        let details = "Before initiating court eviction, you are legally required to serve a formal 15-day Notice to Quit under Section 106 of the Transfer of Property Act, 1882.";
+
+        if (status === 'notice_served' || status === 'nonpayment') {
+          actionTitle = "File Eviction Petition under Rent Control Act";
+          details = "Notice has been served. You should file an Eviction Petition before the Rent Controller / Rent Tribunal having jurisdiction over the property premises under the local state Rent Control legislation.";
+        }
+
+        resultsDiv.innerHTML = `
+          <h4 style="color:var(--accent-gold); font-family:var(--font-heading); font-size:1.25rem; margin-bottom:var(--space-2);">Tenancy Dispute Diagnosis</h4>
+          <span style="font-size:0.6875rem; text-transform:uppercase; background:rgba(239,68,68,0.15); border:1px solid rgba(239,68,68,0.2); padding: 2px 6px; border-radius:4px; color:var(--error); display:inline-block; margin-bottom:var(--space-3);">LEGAL ACTION RECOMMENDED</span>
+
+          <p style="color:var(--text-secondary); font-size:0.9375rem; line-height:1.6; margin-bottom:var(--space-4);">
+            <strong>Proposed Action:</strong> ${actionTitle}. <br>
+            <span style="color:var(--text-muted); font-size:0.875rem; display:block; margin-top:var(--space-2);">${details}</span>
+          </p>
+
+          <div style="border-top:1px solid var(--border-glass); padding-top:var(--space-4); display:flex; gap:var(--space-3);">
+            <button class="btn btn-primary" onclick="document.querySelector('[data-tab=notices]').click();" style="font-size:0.75rem; padding:var(--space-2) var(--space-4);">
+              🚀 Open Notice Generator
+            </button>
+            <button class="btn btn-outline" onclick="document.querySelector('[data-tab=library]').click(); document.getElementById('library-cat-select').value='Rent'; document.getElementById('library-cat-select').dispatchEvent(new Event('change'));" style="font-size:0.75rem; padding:var(--space-2) var(--space-4);">
+              📂 Browse Rent/Eviction Forms
+            </button>
+          </div>
+        `;
+      } else if (type === 'monetary') {
+        const proof = document.getElementById('diag-monetary-proof').value;
+        let action = "Ordinary Civil Recovery Suit";
+        let law = "Order IV of the Civil Procedure Code (CPC), 1908";
+        let strategy = "Filing an ordinary civil suit requires payment of full ad valorem court fees (use the calculators tab to estimate). The limitation period is 3 years from default.";
+
+        if (proof === 'cheque') {
+          action = "Section 138 Cheque Dishonour Notice";
+          law = "Section 138 of the Negotiable Instruments Act, 1881";
+          strategy = "Send a legal notice within 30 days of cheque bounce memo. Give 15 days to pay. If they fail, file a Criminal Complaint under Sec 138 in the Magistrate Court within 30 days of default. (Cheque bounce is a criminal offense with up to 2 years imprisonment).";
+        } else if (proof === 'written') {
+          action = "Summary Suit (Order XXXVII)";
+          law = "Order 37 of Civil Procedure Code (CPC)";
+          strategy = "File a Summary Suit for fast-track recovery. The defendant does not have an automatic right to defend and must apply for 'Leave to Defend' within 10 days, making it highly effective for signed bonds or contracts.";
+        }
+
+        resultsDiv.innerHTML = `
+          <h4 style="color:var(--accent-gold); font-family:var(--font-heading); font-size:1.25rem; margin-bottom:var(--space-2);">Monetary Recovery Diagnosis</h4>
+          <span style="font-size:0.6875rem; text-transform:uppercase; background:rgba(200,169,81,0.15); border:1px solid rgba(200,169,81,0.2); padding: 2px 6px; border-radius:4px; color:var(--accent-gold); display:inline-block; margin-bottom:var(--space-3);">STRATEGY BRIEF</span>
+
+          <p style="color:var(--text-secondary); font-size:0.9375rem; line-height:1.6; margin-bottom:var(--space-4);">
+            <strong>Legal Remedy:</strong> ${action} under ${law}.
+          </p>
+
+          <div style="background:rgba(255,255,255,0.02); padding:var(--space-4); border:1px solid var(--border-glass); border-radius:var(--radius-sm); margin-bottom:var(--space-4); font-size:0.875rem; line-height:1.6; color:var(--text-muted);">
+            <strong>Procedure details:</strong> ${strategy}
+          </div>
+
+          <div style="border-top:1px solid var(--border-glass); padding-top:var(--space-4); display:flex; gap:var(--space-3);">
+            <button class="btn btn-primary" onclick="document.querySelector('[data-tab=notices]').click();" style="font-size:0.75rem; padding:var(--space-2) var(--space-4);">
+              🚀 Draft NI Sec 138 Notice
+            </button>
+            <button class="btn btn-outline" onclick="document.querySelector('[data-tab=library]').click(); document.getElementById('library-cat-select').value='Civil Pleadings'; document.getElementById('library-cat-select').dispatchEvent(new Event('change'));" style="font-size:0.75rem; padding:var(--space-2) var(--space-4);">
+              📂 Browse Civil Pleadings
+            </button>
+          </div>
+        `;
+      } else if (type === 'criminal') {
+        const danger = document.getElementById('diag-criminal-danger').value;
+        let action = "Lodge Cognizable FIR";
+        let details = "Visit the nearest Police Station immediately to file a First Information Report (FIR) under Section 154 CrPC / Section 173 BNSS. Ensure the officer records all facts and provides a free copy of the FIR.";
+
+        if (danger === 'cyber') {
+          action = "Lodge Cybercrime Complaint";
+          details = "File an official cyber crime complaint online at www.cybercrime.gov.in or report to the local Cyber Cell. Keep transaction histories, email headers, or screenshots ready.";
+        }
+
+        resultsDiv.innerHTML = `
+          <h4 style="color:var(--accent-gold); font-family:var(--font-heading); font-size:1.25rem; margin-bottom:var(--space-2);">Criminal &amp; FIR Diagnosis</h4>
+          <span style="font-size:0.6875rem; text-transform:uppercase; background:rgba(239,68,68,0.15); border:1px solid rgba(239,68,68,0.2); padding: 2px 6px; border-radius:4px; color:var(--error); display:inline-block; margin-bottom:var(--space-3);">URGENT PROTOCOL</span>
+
+          <p style="color:var(--text-secondary); font-size:0.9375rem; line-height:1.6; margin-bottom:var(--space-4);">
+            <strong>Protocol Action:</strong> ${action}. <br>
+            <span style="color:var(--text-muted); font-size:0.875rem; display:block; margin-top:var(--space-2);">${details}</span>
+          </p>
+
+          <div style="border-top:1px solid var(--border-glass); padding-top:var(--space-4); display:flex; gap:var(--space-3);">
+            <button class="btn btn-primary" onclick="document.querySelector('[data-tab=fir]').click();" style="font-size:0.75rem; padding:var(--space-2) var(--space-4);">
+              🚀 Open FIR Assistant
+            </button>
+            <button class="btn btn-outline" onclick="document.querySelector('[data-tab=library]').click(); document.getElementById('library-cat-select').value='Criminal Pleading'; document.getElementById('library-cat-select').dispatchEvent(new Event('change'));" style="font-size:0.75rem; padding:var(--space-2) var(--space-4);">
+              📂 Browse Criminal Forms
+            </button>
+          </div>
+        `;
+      }
+    });
+  });
+}
+
