@@ -1,0 +1,85 @@
+FORM NO. 25
+[see section 193 and rule 37]
+Annual return of deduction of tax from interest on securities under section 206 of the income tax act, 1961, for the year ending 31st
+march,.
+1.
+(a) Tax Deduction Account Number
+(b) Permanent Account Number
+2. Details of the person responsible for paying any income by way of interest on securities
+(a) Name /Designation
+(b) Address
+Flat/Door/Block No.
+Name of premises/Building
+Road/Street/Lane
+Area/Locality
+Town/City/District
+State
+Pin Code
+(c) Has address of the person paying income by way of interest on Tick Yes No
+Securities changed since submitting the last return.
+3.Details of securities in respect of which interest has been paid and tax deducted:
+Sl. No.Description of security
+Number of securities
+Date of issue of securitiesPaid up amount of security on which interest is paid (Rs.)Rate of interest%
+Amount of interest paid
+(Rs.)Amount of tax deducted
+(income-tax and surcharge)
+(Rs.)
+(1)(2)(3)(4)(5)(6)(7)(8)
+In case of companiesIn case of non
+companiesIn case of companiesIn case of non-companiesIn case of companiesIn case of non -companies
+(a)(b)(a)(b)(a)(b)
+Total
+4. (a) Amount of interest on which no deduction of tax has been
+made in accordance with the provision of section 196
+Number of owner of security
+(b) Amount of interest on which no deduction of tax has been
+made in accordance with the provision of section 193(v)
+Number of owner of security
+5. Details of tax deducted and paid to the credit of the central Government
+(a) By or on behalf of central Government :
+Sl. NoAmount of tax deductedTransfer Voucher NumberDate of Transfer Voucher
+(1)(2)(3)(4)
+(a)
+By Person responsible for paying other than Central Government :
+Sl. No.Challan No.Date of paymentAmount of tax paid
+(Rs.)Name and address of bank
+(1)(2)(3)(4)(5)
+Total
+(6)
+Amount of interest paid and tax deducted at source at the prescribed rates in force :
+(a) In the case of companies:
+Sl.No.Permanent Account Number (PAN)Name of Com-panyAddress of the compa-nyAmount of interest (Rs.)Date on which interest paidAmount of tax deducted (Rs.)Date on which tax deducted
+Date on which tax paid to the credit of central GovernmentTax Deduction certificate NumberDate of furnishing of tax Deduction Certificate to the Companies
+(1)(2)(3)(4)(5)(7)(8)(9)(10)(9)(11)
+Total
+(a) In the case of persons other than companies :
+Sl. NoPermanent Account Number (PAN)Name of Person/PayeeAmount of interestDate on which interest paid (Rs.)Amount of tax deductedDate on which tax deducted (Rs.)
+Date on which tax paid to the credit of Central GovernmentTax Deduction Certificate NumberDate of furnishing of taxDeduction Certificate to the Person/ Payee
+(1)(2)(3)(4)(5)(6)(7)(8)(9)(10)(11)
+Total
+7. Amount of interest Paid and tax deducted at Source at a lower rate or on tax deducted in accordance with section 197 :
+(a) In the case of companies :
+Sl.No.Permanent Account Number (PAN)Name of CompanyAddress of CompanyAmount of Interest (Rs.)
+Date on which interest paidRate of deduction of tax (%)Amount of tax deducted (Rs.)Date of which tax deductedDate on which tax paid to the credit of Central GovernmentAssessing Officer
+s Certificate Reference NumberTax Deduction Certificate NumberDate of furnishing of Tax Deduction Certificate to the company
+(1)(2)(3)(4)
+(5)(6)(7)(8)(9)(10)(11)(12)(13)
+Total
+(a) In the case of Persons other than Companies :
+Sl.No.Permanent Account Number (PAN)Name of Person/ PayeeAddress of Person/ Payee
+Amount of Interest (Rs.)Date on which interest paidRate of deduction of tax (%)Amount of tax deducted (Rs.)Date of which tax deductedDate on which tax paid to the credit of Central GovernmentAssessing Officer
+s Certificate Reference NumberTax Deduction Certificate NumberDate of furnishing of Tax Deduction Certificate to the company
+(1)(2)(3)(4)
+(5)(6)(7)(8)(9)(10)(11)(12)(13)
+Total
+7. Amount of interest paid without deduction of tax under section 197A :
+Sl. No.Permanent Account Number (PAN)Name of person / payeeAddress of person / payeeAmount of interest
+(Rs.)Reason(s) for non-deduction of taxDate on which the declaration was furnished
+Date on which the declaration was furnished to commissioner of income-tax / Chief commissioner of income-tax
+(1)(2)(3)(4)(5)(6)(7)(8)
+Total
+Verification
+I, , hereby certify that the above statement is correct and complete.
+Place : Name and signature of the person responsible for deducting tax at source
+Date : Designation : ....

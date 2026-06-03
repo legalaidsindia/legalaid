@@ -1,0 +1,505 @@
+/* ==========================================================================
+   LegalAidIndia.org — Additional Styles & Overrides
+   ==========================================================================
+   Styles not covered by index.css, components.css, or animations.css.
+   This file patches layout gaps and adds remaining component styles.
+   ========================================================================== */
+
+/* --- Dark Section Variant ----------------------------------------------- */
+.section--dark {
+  background-color: var(--bg-secondary);
+}
+
+/* --- Gradient Text (used as .highlight inside headings) ----------------- */
+.highlight {
+  background: var(--gradient-gold-text);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* --- Icon Sizing Utilities ---------------------------------------------- */
+.icon-xs {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+.icon-sm {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+.icon-md {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+.icon-lg {
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+/* --- Navbar Actions Container ------------------------------------------- */
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* --- AI Section Split Layout -------------------------------------------- */
+.ai-section-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-10);
+  align-items: start;
+}
+
+@media (min-width: 1024px) {
+  .ai-section-layout {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-12);
+    align-items: center;
+  }
+}
+
+.ai-features {
+  padding-right: 0;
+}
+
+@media (min-width: 1024px) {
+  .ai-features {
+    padding-right: var(--space-8);
+  }
+}
+
+/* --- Hero Canvas (particle background) ---------------------------------- */
+.hero-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* --- Hero Scroll Indicator ---------------------------------------------- */
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: var(--space-8);
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--text-muted);
+  opacity: 0.5;
+  z-index: var(--z-base);
+}
+
+/* --- Chip (interactive badge used for quick actions) -------------------- */
+.chip {
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.chip:hover {
+  background: rgba(200, 169, 81, 0.2);
+  border-color: rgba(200, 169, 81, 0.4);
+  transform: translateY(-1px);
+}
+
+/* --- Stats Numbers (for hero trust bar and research cards) --------------- */
+.stat-number {
+  font-family: var(--font-heading);
+  font-weight: var(--fw-bold);
+  color: var(--accent-gold);
+}
+
+/* --- Filter Buttons Active State ---------------------------------------- */
+.filter-btn.active {
+  background: rgba(200, 169, 81, 0.15);
+  border-color: rgba(200, 169, 81, 0.3);
+  color: var(--accent-gold);
+}
+
+/* --- Contact Grid Layout ------------------------------------------------ */
+@media (min-width: 768px) {
+  #contact .container > div:last-child {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* --- Document Tool Layout in Tabs --------------------------------------- */
+@media (min-width: 768px) {
+  .tabs__panel .glass-panel {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* --- Lawyers Grid (same as services-grid) ------------------------------- */
+.lawyers-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+}
+
+@media (min-width: 480px) {
+  .lawyers-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .lawyers-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* --- Chat Quick Actions Bar Styling ------------------------------------- */
+.chat-quick-actions {
+  border-top: 1px solid var(--border-glass);
+  padding-top: var(--space-3);
+}
+
+/* --- Mobile Menu active state (JS toggles) ------------------------------ */
+.nav-menu.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* --- Hamburger → X transform (also handled by BEM but ensuring compat) -- */
+.hamburger.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* --- Nav Link Active (JS adds .active) ---------------------------------- */
+.nav-link.active {
+  color: var(--text-primary);
+}
+
+/* --- Navbar Scrolled (JS class — non-BEM compat) ------------------------ */
+.navbar-scrolled {
+  background: rgba(10, 14, 26, 0.92);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Scroll-to-top visible (JS class — non-BEM compat) ------------------ */
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* --- Chat Message Timestamp --------------------------------------------- */
+.chat-msg__time {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-top: var(--space-1);
+  opacity: 0.7;
+}
+
+.msg-user .chat-msg__time {
+  text-align: right;
+  color: rgba(255,255,255,0.6);
+}
+
+/* --- Document Progress Bar ---------------------------------------------- */
+.doc-progress {
+  margin-top: var(--space-6);
+  grid-column: 1 / -1;
+}
+
+.doc-progress__bar {
+  width: 100%;
+  height: 6px;
+  background: var(--bg-glass);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  margin-bottom: var(--space-3);
+}
+
+.doc-progress__fill {
+  height: 100%;
+  background: var(--gradient-gold);
+  border-radius: var(--radius-pill);
+  width: 0;
+  transition: width 0.3s ease-out;
+}
+
+.doc-progress__label {
+  font-size: 0.875rem;
+  color: var(--accent-gold-light);
+  text-align: center;
+}
+
+/* --- Document Success State --------------------------------------------- */
+.doc-success {
+  text-align: center;
+  padding: var(--space-6);
+}
+
+.doc-success__icon {
+  color: var(--success);
+  margin: 0 auto var(--space-4);
+}
+
+.doc-success h4 {
+  color: var(--success);
+  font-family: var(--font-heading);
+  margin-bottom: var(--space-2);
+  font-size: 1.25rem;
+}
+
+.doc-success p {
+  color: var(--text-secondary);
+  margin-bottom: var(--space-4);
+}
+
+.doc-download-btn {
+  margin-top: var(--space-3);
+}
+
+/* --- Case Search Results ------------------------------------------------ */
+.case-search-results {
+  margin-top: var(--space-6);
+}
+
+.case-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  margin-bottom: var(--space-4);
+  transition: border-color var(--duration-fast) var(--ease-out);
+}
+
+.case-card:hover {
+  border-color: var(--border-glass-hover);
+}
+
+.case-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-4);
+  margin-bottom: var(--space-2);
+}
+
+.case-card__title {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: var(--fw-semibold);
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+.case-card__year {
+  font-size: 0.8125rem;
+  font-weight: var(--fw-semibold);
+  color: var(--accent-gold);
+  white-space: nowrap;
+  padding: var(--space-1) var(--space-2);
+  background: rgba(200, 169, 81, 0.1);
+  border-radius: var(--radius-xs);
+}
+
+.case-card__citation {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  margin-bottom: var(--space-3);
+  font-style: italic;
+}
+
+.case-card__summary {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  line-height: var(--lh-relaxed);
+  margin-bottom: var(--space-3);
+}
+
+.case-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.case-tag {
+  font-size: 0.6875rem;
+  font-weight: var(--fw-semibold);
+  color: var(--accent-blue-light);
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.15);
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-pill);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wide);
+}
+
+.case-card mark {
+  background: rgba(200, 169, 81, 0.3);
+  color: var(--text-primary);
+  padding: 0 2px;
+  border-radius: 2px;
+}
+
+.case-no-results {
+  text-align: center;
+  padding: var(--space-8);
+  color: var(--text-muted);
+}
+
+/* --- Form Error States -------------------------------------------------- */
+.input-error {
+  border-color: var(--error) !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.12) !important;
+}
+
+.field-error {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--error);
+  margin-top: var(--space-1);
+}
+
+/* --- Lawyer No Results -------------------------------------------------- */
+.lawyer-no-results {
+  text-align: center;
+  padding: var(--space-8);
+  color: var(--text-muted);
+  grid-column: 1 / -1;
+}
+
+/* --- Service Card Click Pulse ------------------------------------------- */
+.service-card--clicked {
+  animation: pulse 0.4s ease-out;
+}
+
+/* --- Tab Active State Fix (ensure JS classes align with CSS) ------------- */
+.tab-btn.active {
+  color: var(--accent-gold);
+}
+
+.tab-btn.active::after {
+  transform: scaleX(1);
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* --- Chat Container Responsive Height ----------------------------------- */
+@media (max-width: 767px) {
+  .chat-container {
+    height: 460px;
+    max-height: 65vh;
+  }
+}
+
+/* --- Tabs responsive scroll hint ---------------------------------------- */
+.tabs__header {
+  -webkit-overflow-scrolling: touch;
+}
+
+.tabs__btn {
+  white-space: nowrap;
+}
+
+/* --- Library Browser Layout --------------------------------------------- */
+.library-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  margin-top: var(--space-4);
+  align-items: start;
+}
+
+@media (min-width: 992px) {
+  .library-layout {
+    grid-template-columns: 360px 1fr;
+    gap: var(--space-6);
+  }
+}
+
+.library-sidebar {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-height: 700px;
+  overflow-y: auto;
+}
+
+.library-content {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.library-doc-item {
+  padding: var(--space-3) var(--space-4);
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.01);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  transition: all var(--duration-fast) var(--ease-out);
+  text-align: left;
+}
+
+.library-doc-item:hover {
+  background: rgba(200, 169, 81, 0.08);
+  color: var(--accent-gold);
+  padding-left: var(--space-5);
+}
+
+.library-doc-item.active {
+  background: rgba(200, 169, 81, 0.15);
+  color: var(--accent-gold);
+  font-weight: var(--fw-semibold);
+  border-left: 3px solid var(--accent-gold);
+}
+
+.library-quick-chip {
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.library-quick-chip:hover {
+  background: rgba(200, 169, 81, 0.15) !important;
+  color: var(--accent-gold) !important;
+  border-color: rgba(200, 169, 81, 0.3) !important;
+  transform: translateY(-1px);
+}
+

@@ -1,0 +1,513 @@
+/* ==========================================================================
+   LegalAidIndia.org — Animations & Motion
+   ==========================================================================
+   Keyframe definitions, animation utility classes, scroll-reveal system,
+   and accessible reduced-motion overrides.
+   Depends on index.css for design tokens.
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1. KEYFRAMES — Entrance Animations
+   ========================================================================== */
+
+/* --- Fade In Up --------------------------------------------------------- */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Fade In Down ------------------------------------------------------- */
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Fade In Left ------------------------------------------------------- */
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* --- Fade In Right ------------------------------------------------------ */
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* --- Scale In ----------------------------------------------------------- */
+@keyframes scaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+/* ==========================================================================
+   2. KEYFRAMES — Looping / Ambient Animations
+   ========================================================================== */
+
+/* --- Float (Gentle Y-axis hover) ---------------------------------------- */
+@keyframes float {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
+/* --- Pulse (Subtle scale breath) ---------------------------------------- */
+@keyframes pulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* --- Glow (Gold box-shadow pulse) --------------------------------------- */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 15px rgba(200, 169, 81, 0.15),
+                0 0 30px rgba(200, 169, 81, 0.08);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(200, 169, 81, 0.3),
+                0 0 50px rgba(200, 169, 81, 0.15);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(200, 169, 81, 0.15),
+                0 0 30px rgba(200, 169, 81, 0.08);
+  }
+}
+
+/* --- Gradient Shift (Hero background animation) ------------------------- */
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  25%  { background-position: 100% 50%; }
+  50%  { background-position: 100% 100%; }
+  75%  { background-position: 0% 100%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* --- Rotate (360° continuous spin) -------------------------------------- */
+@keyframes rotate {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+/* ==========================================================================
+   3. KEYFRAMES — Chat & UI-Specific
+   ========================================================================== */
+
+/* --- Typing Dots (Opacity pulse, staggered via delay) ------------------- */
+@keyframes typingDots {
+  0%, 60%, 100% {
+    opacity: 0.3;
+    transform: translateY(0);
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(-4px);
+  }
+}
+
+/* --- Slide In Right (Chat user message entrance) ------------------------ */
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* --- Slide In Left (Chat bot message entrance) -------------------------- */
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+/* ==========================================================================
+   4. KEYFRAMES — Effects & Loading
+   ========================================================================== */
+
+/* --- Counter Up (Number reveal — clip-based) ---------------------------- */
+@keyframes counterUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Shimmer (Skeleton loading gradient sweep) -------------------------- */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* --- Fade In (Simple opacity) ------------------------------------------- */
+@keyframes fadeIn {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* --- Bounce In (Elastic entrance) --------------------------------------- */
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* --- Ripple (Button click effect) --------------------------------------- */
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* --- Border Glow (Subtle border animation) ------------------------------ */
+@keyframes borderGlow {
+  0%   { border-color: rgba(200, 169, 81, 0.15); }
+  50%  { border-color: rgba(200, 169, 81, 0.4); }
+  100% { border-color: rgba(200, 169, 81, 0.15); }
+}
+
+
+/* ==========================================================================
+   5. SCROLL-REVEAL SYSTEM
+   ==========================================================================
+   Add .animate-on-scroll to any element. When it enters the viewport,
+   toggle the .animated class via Intersection Observer (JS).
+   ========================================================================== */
+
+/* Initial hidden state */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+/* Revealed state */
+.animate-on-scroll.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Directional Variants ---------------------------------------------- */
+.animate-on-scroll.from-left {
+  transform: translateX(-30px);
+}
+
+.animate-on-scroll.from-left.animated {
+  transform: translateX(0);
+}
+
+.animate-on-scroll.from-right {
+  transform: translateX(30px);
+}
+
+.animate-on-scroll.from-right.animated {
+  transform: translateX(0);
+}
+
+.animate-on-scroll.from-down {
+  transform: translateY(-30px);
+}
+
+.animate-on-scroll.from-down.animated {
+  transform: translateY(0);
+}
+
+.animate-on-scroll.scale-up {
+  transform: scale(0.9);
+}
+
+.animate-on-scroll.scale-up.animated {
+  transform: scale(1);
+}
+
+
+/* ==========================================================================
+   6. ANIMATION DELAY UTILITIES
+   ==========================================================================
+   Stagger children by applying .animate-delay-1 through .animate-delay-5.
+   Each adds 100ms of delay for a cascading reveal effect.
+   ========================================================================== */
+
+.animate-delay-1 { transition-delay: 100ms; }
+.animate-delay-2 { transition-delay: 200ms; }
+.animate-delay-3 { transition-delay: 300ms; }
+.animate-delay-4 { transition-delay: 400ms; }
+.animate-delay-5 { transition-delay: 500ms; }
+.animate-delay-6 { transition-delay: 600ms; }
+.animate-delay-7 { transition-delay: 700ms; }
+.animate-delay-8 { transition-delay: 800ms; }
+
+
+/* ==========================================================================
+   7. NAMED ANIMATION UTILITY CLASSES
+   ==========================================================================
+   Apply these classes directly to elements for instant looping animations.
+   ========================================================================== */
+
+/* Float — gentle bobbing */
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Pulse — subtle scale breath */
+.pulse-animation {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Glow — gold box-shadow pulse */
+.glow-animation {
+  animation: glow 2s ease-in-out infinite;
+}
+
+/* Rotate — continuous spin */
+.rotate-animation {
+  animation: rotate 8s linear infinite;
+}
+
+/* Shimmer — loading skeleton */
+.shimmer-animation {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.03) 0%,
+    rgba(255, 255, 255, 0.08) 50%,
+    rgba(255, 255, 255, 0.03) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.8s ease-in-out infinite;
+}
+
+/* Gradient shift — for hero / large gradient backgrounds */
+.gradient-shift-animation {
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+/* Bounce in — elastic entrance (one-shot) */
+.bounce-in-animation {
+  animation: bounceIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* Border glow — subtle pulsing border */
+.border-glow-animation {
+  animation: borderGlow 3s ease-in-out infinite;
+}
+
+
+/* ==========================================================================
+   8. ENTRANCE ANIMATION UTILITIES (One-shot)
+   ==========================================================================
+   Apply these for immediate entrance effects on page load.
+   ========================================================================== */
+
+.fade-in-up {
+  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.fade-in-down {
+  animation: fadeInDown 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.fade-in-left {
+  animation: fadeInLeft 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.fade-in-right {
+  animation: fadeInRight 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.scale-in {
+  animation: scaleIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+
+/* ==========================================================================
+   9. CHAT MESSAGE ENTRANCE ANIMATIONS
+   ==========================================================================
+   Apply to chat messages for staggered reveal.
+   ========================================================================== */
+
+.msg-user {
+  animation: slideInRight 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.msg-bot {
+  animation: slideInLeft 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+
+/* ==========================================================================
+   10. COUNTER NUMBER ANIMATION
+   ==========================================================================
+   Wrap stat numbers in .counter-animate for a clip-reveal effect.
+   ========================================================================== */
+
+.counter-animate {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.counter-animate .counter-value {
+  display: inline-block;
+  animation: counterUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+
+/* ==========================================================================
+   11. HOVER MICRO-INTERACTIONS
+   ==========================================================================
+   Reusable hover transforms that can be composed with other classes.
+   ========================================================================== */
+
+.hover-lift {
+  transition: transform var(--duration-normal) var(--ease-out),
+              box-shadow var(--duration-normal) var(--ease-out);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.hover-scale {
+  transition: transform var(--duration-fast) var(--ease-spring);
+}
+
+.hover-scale:hover {
+  transform: scale(1.03);
+}
+
+.hover-glow {
+  transition: box-shadow var(--duration-normal) var(--ease-out);
+}
+
+.hover-glow:hover {
+  box-shadow: var(--shadow-glow);
+}
+
+/* Magnetic tilt hint (subtle perspective tilt on hover) */
+.hover-tilt {
+  transition: transform var(--duration-normal) var(--ease-out);
+  transform-style: preserve-3d;
+  perspective: 800px;
+}
+
+.hover-tilt:hover {
+  transform: rotateX(2deg) rotateY(-2deg) translateY(-2px);
+}
+
+
+/* ==========================================================================
+   12. ACCESSIBLE REDUCED MOTION
+   ==========================================================================
+   Respects the user's OS-level preference for reduced motion.
+   Disables all animations and transitions for accessibility.
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  /* Kill all animations */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Scroll-reveal: show everything immediately */
+  .animate-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  /* Disable floating, pulsing, glowing */
+  .float-animation,
+  .pulse-animation,
+  .glow-animation,
+  .rotate-animation,
+  .shimmer-animation,
+  .gradient-shift-animation,
+  .border-glow-animation {
+    animation: none !important;
+  }
+
+  /* Disable hover transforms */
+  .hover-lift:hover,
+  .hover-scale:hover,
+  .hover-tilt:hover {
+    transform: none !important;
+  }
+}

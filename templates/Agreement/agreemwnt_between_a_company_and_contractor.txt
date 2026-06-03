@@ -1,0 +1,123 @@
+AGREEMENT BETWEEN A COMPANY AND THE CONTRACTORS FOR THE MAINTENANCE OF COMPUTERS FOR A FIXED PERIOD
+THIS AGREEMENT
+made aton thisday of20
+between X Y Co. Ltd., a company incorporated under the Companies Act, 1956 and having its registered office at ........... (hereinafter referred to as "the Company", which expression shall, unless it be repugnant to the context or meaning thereof, be dee
+m
+ed tomean and include its successors and assigns) of the ONE PART and Alpha Computers Pvt. Ltd., a company incorporated under the Companies Act, 1956 and having its registered office at ........... hereinafter referred to as "the Alpha", which expression
+shall, unless it be repugnant to the context or meaning thereof, be deemed to mean and include its successors and assigns) of the OTHER PART.
+WHEREAS
+(1)
+The company has purchased 5 computers, the details of which
+have been given in the Schedule hereunder written, hereinafter referred by company to as "the said Computers" from Alpha on
+and Alpha offered free service of the said computers for a period of one year from the date of purchase of the said computers.
+(2)
+After the expiry of free service period, the company has requested Alpha to provide service of the said computers for a period of one year, which Alpha has agreed to provide on the terms and c
+onditions hereinafter contained
+NOW THESE PRESENTS WITNESS AND THE PARTIES HERETO AGREE HEREBY AS FOLLOWS:
+(1)
+Alpha will provide at the company's office all labour, par
+ts and material that it deems necessary to maintain in good operating condition the said computers. Replacement parts shall be new or their equivalent, replaced parts become the property of Alpha. Services provided by Alpha include and are limited to the
+following:
+(a)
+Preventive maintenance is maintenance and includes cleaning, adjusting, lubricating, inspecting, testing and calibrating procedures designed to endure proper operation, reduce product failure and/or
+extend useful product life. This maintenance will be performed according to the procedures and at the frequencies recommended the company. Preventive maintenance will be performed at company office at the company's facility during the contract period (reg
+ular business days/hours), as mutually agreed or coincident with remedial maintenance, by authorised Alpha's service representative. Preventive maintenance is limited to two regular work days unless, at the discretion of Alpha, additional days are necessa
+r
+y to complete the preventive maintenance, such days not to exceed five working days. Remedial maintenance during a preventive maintenance that requires additional days will be charged as remedial maintenance call or at the current hourly rate if all remed
+ial calls have been used.
+(b)
+Remedial maintenance is unscheduled maintenance at the company's facility. Remedial maintenance includes the diagnosis and correction of product malfunctions and fail
+ures. Remedies may consist of temporary procedures to be followed by the company while a permanent remedy is being sought. Remedial maintenance will commence during the period of this agreement and will continue uninterrupted as long as reasonable progres
+s
+is being made or until the product(s) is/are operational. If Alpha determines that additional parts or resources are required, service will resume as soon as these parts or resources are available. After all remedial maintenance calls have been used, add
+itional remedial maintenance will be allowed at the current Alpha hourly rate.
+(c)
+Assembly repair is unschedule
+d repair of returnable assembly level components (printed circuit boards, power supplies, switching units, etc.) at Alpha's factory. Assembly repair includes the diagnosis and correction of product malfunctions and failures. Assembly repair will commence
+d
+uring the period of coverage and will continue uninterrupted as long as reasonable progress is being made or until the product(s) is/are operational. If Alpha determines that additional parts or resources are required, service will resume as soon as these
+parts or resources are available. The number of repairs of assemblies related to equipment covered under this agreement is unlimited.
+(2)
+The periods of coverage specified below shall uniformly apply to all products
+covered by this Agreement. The company may request a change in the specified periods of coverage at any time. Such change is subject to written approval by Alpha.
+Monday through Friday 7.30 A.M. to 4.00 P.M.
+(excluding Alpha holidays)
+Saturday N/A To N/A
+Sunday N/A To N/A
+(3)
+The response time is 48 hours. Alpha shall respond to a request for remedial maintenance or technical support within the specified response time measured in clock hours. Availability of
+Alpha personnel and telephone answering service is limited to the specified period of coverage. "Response Time" is defined as the duration of time necessary for Alpha personnel to initiate action upon a specified company request and advise the company of
+e
+ither action to take to complete that particular request or action to take to provide Alpha with additional information needed to assist in such company's request completion, or the embarkation of Alpha personnel for arrival at the company's equipment sit
+e.
+(4) Alpha shall be under no obligation to furnish support service under this agreement should repair be required because of:
+(i) improper use;
+(ii)Natural disasters such as flood or earthquake;
+(iii)Strikes, riots or acts of war or nuclear disaster;
+(iv)Repairs, maintenance, modifications or relocation and reinstallation made by other than a
+lpha personnel or without Alpha's supervision and approval;
+(v)Unusual shock or electrical damage, neglect, airconditioning failure, humidity control
+failure, a corrosive atmosphere harmful to electronic circuitry, damage during
+transportation by the company or causes other than ordinary use; and
+(vi)Failure by company to maintain the site specifications recommended by Alpha. If
+support services are required as a result of the causes stated above, such service
+shall be provided at Alpha standard service rates for labour, travel and material in
+effect at the time of service. Alpha may also, at its option, terminate this agreement as a result of the causes stated above. Terminatio
+n is subject to the guidelines specified under Item 8 of this Agreement.
+(5)
+Alpha may, at its option, with no additional charge to the company, make modifications to improve the operation and/or reliability of the products being serviced under this agreement.
+(6)
+If the company intends
+to relocate the products covered under this agreement, it shall give Alpha sixty days written notice prior to any relocation of products covered by on
+site support services being provided under this agreement. The products moved to a location within the co
+untry of original installation shall continue to be serviced under this agreement. The response time and charges will be adjusted to reflect the new location. Products moved outside the country of original installation may continue to be serviced under th
+i
+s agreement, at the option of Alpha. The services to be provided and charges for such services shall be subject to mutual agreement. For installed products which will continue to be serviced, Alpha at its option, shall supervise the dismantling and packin
+g
+of the product and shall inspect and reinstal the products at the new location. These services, if provided, shall be at additional charge based on Alpha's standard service rates in effect at the time. The company shall furnish all labour and materials f
+or the dismantling, packing and placement of the products during relocation.
+(7)
+Alpha's services do not include:
+(i) operating supplies and consummables;
+(ii) refinishing the products or furnishing materials for that purpose;
+(iii) electrical work external to the products;
+(iv) maintenance of accessories, attachments or products not specified herein or on subsequent orders; or
+(v) any other services not specifically described herein.
+(8)
+This agreement shall be for a period of one year from the date of these presents, unless terminated by either party on not less than ninety days written notice (given prior to the expiration of the successive period then in effect).
+(9)
+The company shall pay a sum of Rs
+per month per computer for services provided by Alpha. The said charges are exclusive of State and local use, sales, property (ad valorem) and similar taxes. The
+company shall pay such taxes and when applicable such taxes will appear as separate items on Alpha's invoice.
+(10)
+The Alpha shall submit invoice for charges in advance or as soon as it becomes applicable
+. Any administration charge will be invoiced in advance as soon as it becomes applicable. Invoices for other charges will be submitted as the charges are incurred. Unless otherwise stated in writing by Alpha, the company shall pay all invoices submitted u
+nder this agreement within twenty days from date of invoice.
+(11 )
+Any attempt to assign or transfer any of the rights, duties, or obligations herein shall render such attempted assignment or transfer null and void.
+(12)
+Alpha reserves the right to withhold without liability, but with prior written notice, any services authorised by the company under this agreement, if the company is
+delinquent in payment for any services, and to change the credit terms herein when, in Alpha's opinion, the financial condition or previous payment record of the company so warrants.
+(13)
+In the event of any proceedings, voluntary or involuntary, in bankruptcy or insolvency or windingup by or against the company or in the event of the appointment, with or without the company's consent of an assignee for the benefit of credito
+rs, or of a receiver, Alpha may elect to cancel the unfulfilled part of this Agreement without refund or liability for said unfulfilled part.
+(14)
+Alpha's failure to exercise any of its rights hereunder shall not constitute or be deemed waiver or forfeiture of such rights.
+(15)
+Any notice required to be given hereunder shall be given in writing at the address of each party set forth within or to such other address either party may substitute by written notice to the other.
+(16)
+All disputes and differences of any kind whatever arising out of or in c
+onnection with this agreement shall be referred to the arbitration and final decision of an arbitrator to be agreed upon and appointed by the parties or in case of disagreement as to the appointment of a single arbitrator, to the appointment of two arbitr
+ators, one to be appointed by each party and if there are two arbitrators, they shall before taking upon themselves the burden of reference appoint an umpire. The arbitrator or
+arbitrators, as the case may be, shall make his or their award within one year or such further extended time as may be decided by him or them, as the case may be, with the consent of the parties the date of entering on the reference. This submission to th
+e
+arbitrators shall be deemed to be a submission to arbitration within the meaning of the Indian Arbitration Act, 1940 or any statutory modification thereof. The award of arbitrator or arbitrators, as the case may be, shall be final and binding on the part
+ies.
+(17)
+This agreement shall be executed in duplicate. The original shall be retained by the company and duplicate by the Alpha.
+IN WITNESS WHEREOF the parties have executed these presents on th
+e day and year hereinabove written and in the manner hereinafter mentioned.
+WITNESSES
+1. Signed and delivered by X Y Co. Ltd., the within
+named company, by its Managing Director Shri .........
+2. Signed and delivered by Alpha Computers Pvt. Ltd., the within named Alpha, by its Marketing Director Shri .....................

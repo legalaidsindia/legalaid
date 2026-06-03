@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- SEO Meta -->
+    <title>LegalAidIndia — AI-Powered Legal Assistance | Free Online Consultations</title>
+    <meta name="description" content="LegalAidIndia.org bridges justice and accessibility. Get AI-powered legal guidance, document drafting, case research, and expert consultations in 23+ Indian languages.">
+    <meta name="keywords" content="legal aid india, AI legal assistant, online lawyer consultation, legal document drafting, FIR help, RTI application, Indian law, free legal advice">
+    <meta name="author" content="LegalAidIndia.org">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="LegalAidIndia — AI-Powered Legal Assistance">
+    <meta property="og:description" content="Your trusted online legal partner. AI-powered legal guidance in 23+ Indian languages.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://legalaidindia.org">
+    <meta property="og:locale" content="en_IN">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/overrides.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚖️</text></svg>">
+</head>
+<body>
+
+    <!-- ========== NAVIGATION ========== -->
+    <nav class="navbar" id="navbar">
+        <div class="container navbar__inner">
+            <!-- Logo -->
+            <a href="#" class="navbar__logo" id="navbar-logo">
+                <div class="navbar__logo-icon">⚖</div>
+                <span class="navbar__logo-text">LegalAid<span>India</span></span>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <ul class="navbar__links" id="nav-menu">
+                <li><a href="#services" class="navbar__link nav-link">Services</a></li>
+                <li><a href="#ai-assistant" class="navbar__link nav-link">AI Assistant</a></li>
+                <li><a href="#documents" class="navbar__link nav-link">Documents</a></li>
+                <li><a href="#research" class="navbar__link nav-link">Research</a></li>
+                <li><a href="#lawyers" class="navbar__link nav-link">Find Lawyers</a></li>
+                <li><a href="#knowledge" class="navbar__link nav-link">Knowledge</a></li>
+                <li><a href="#contact" class="navbar__link nav-link">Contact</a></li>
+            </ul>
+
+            <!-- Right Side Actions -->
+            <div class="navbar__actions">
+                <!-- Language Selector -->
+                <div class="lang-select" id="lang-select">
+                    <button class="lang-select__trigger lang-toggle" id="lang-btn" aria-label="Select language" aria-expanded="false">
+                        <i data-lucide="globe" class="icon-sm"></i>
+                        <span class="lang-label" id="current-lang">EN</span>
+                        <span class="arrow">▾</span>
+                    </button>
+                    <div class="lang-select__dropdown lang-dropdown" id="lang-dropdown">
+                        <button class="lang-select__option lang-select__option--active lang-option" data-lang="EN">🇬🇧 English</button>
+                        <button class="lang-select__option lang-option" data-lang="HI">🇮🇳 हिन्दी</button>
+                        <button class="lang-select__option lang-option" data-lang="BN">বাংলা</button>
+                        <button class="lang-select__option lang-option" data-lang="TE">తెలుగు</button>
+                        <button class="lang-select__option lang-option" data-lang="MR">मराठी</button>
+                        <button class="lang-select__option lang-option" data-lang="TA">தமிழ்</button>
+                        <button class="lang-select__option lang-option" data-lang="GU">ગુજરાતી</button>
+                        <button class="lang-select__option lang-option" data-lang="KN">ಕನ್ನಡ</button>
+                        <button class="lang-select__option lang-option" data-lang="ML">മലയാളം</button>
+                        <button class="lang-select__option lang-option" data-lang="PA">ਪੰਜਾਬੀ</button>
+                        <button class="lang-select__option lang-option" data-lang="OR">ଓଡ଼ିଆ</button>
+                        <button class="lang-select__option lang-option" data-lang="UR">اردو</button>
+                    </div>
+                </div>
+
+                <!-- CTA Button -->
+                <a href="#contact" class="btn btn-primary btn-sm navbar__cta">
+                    Free Consultation
+                </a>
+
+                <!-- Mobile Hamburger -->
+                <button class="navbar__hamburger hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="navbar__mobile-menu nav-menu" id="mobile-menu">
+            <a href="#services" class="navbar__mobile-link nav-link">Services</a>
+            <a href="#ai-assistant" class="navbar__mobile-link nav-link">AI Assistant</a>
+            <a href="#documents" class="navbar__mobile-link nav-link">Documents</a>
+            <a href="#research" class="navbar__mobile-link nav-link">Research</a>
+            <a href="#lawyers" class="navbar__mobile-link nav-link">Find Lawyers</a>
+            <a href="#knowledge" class="navbar__mobile-link nav-link">Knowledge</a>
+            <a href="#contact" class="navbar__mobile-link nav-link">Contact</a>
+            <a href="#contact" class="btn btn-primary" style="margin-top: 1rem;">Free Consultation</a>
+        </div>
+    </nav>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero" id="hero">
+        <canvas id="hero-canvas" class="hero-canvas"></canvas>
+
+        <div class="container hero__content">
+            <div class="hero__label animate-on-scroll">
+                <i data-lucide="sparkles" class="icon-sm"></i>
+                <span>AI-Powered Legal Intelligence</span>
+            </div>
+
+            <h1 class="hero__heading animate-on-scroll">
+                Your Trusted<br>
+                <span class="highlight">AI-Powered</span><br>
+                Legal Partner
+            </h1>
+
+            <p class="hero__subheading animate-on-scroll">
+                Bridging justice and accessibility with intelligent legal solutions.<br>
+                Expert guidance, document automation &amp; case research in 23+ Indian languages.
+            </p>
+
+            <div class="hero__actions animate-on-scroll">
+                <a href="#ai-assistant" class="btn btn-primary btn-lg">
+                    <i data-lucide="message-circle" class="icon-sm"></i>
+                    Chat with AI Advisor
+                </a>
+                <a href="#services" class="btn btn-outline btn-lg">
+                    <i data-lucide="grid-3x3" class="icon-sm"></i>
+                    Explore Services
+                </a>
+            </div>
+
+            <div class="hero__trust animate-on-scroll">
+                <div class="hero__trust-item">
+                    <i data-lucide="users" class="icon-sm"></i>
+                    <span><strong class="stat-number" data-target="10000">0</strong>+ Cases Resolved</span>
+                </div>
+                <div class="hero__trust-item">
+                    <i data-lucide="clock" class="icon-sm"></i>
+                    <span><strong class="stat-number" data-target="24">0</strong>/7 AI Support</span>
+                </div>
+                <div class="hero__trust-item">
+                    <i data-lucide="globe" class="icon-sm"></i>
+                    <span><strong class="stat-number" data-target="23">0</strong>+ Languages</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-scroll-indicator float-animation">
+            <i data-lucide="chevrons-down" class="icon-md"></i>
+        </div>
+    </section>
+
+    <!-- ========== SERVICES SECTION ========== -->
+    <section class="section" id="services">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-header__label">What We Offer</span>
+                <h2 class="section-header__title">Comprehensive Legal <span class="highlight">Services</span></h2>
+                <p class="section-header__subtitle">Fast, reliable, and hassle-free legal support tailored to your needs.</p>
+                <span class="section-header__line"></span>
+            </div>
+
+            <div class="services-grid">
+                <div class="card service-card animate-on-scroll" id="service-consultations">
+                    <div class="card__icon"><i data-lucide="video" class="icon-md"></i></div>
+                    <h3 class="card__title">Online Legal Consultations</h3>
+                    <p class="card__text">Connect with expert lawyers via video, voice, or chat. Get personalized legal advice from the comfort of your home.</p>
+                    <a href="#contact" class="btn btn-ghost btn-sm">Book Now <i data-lucide="arrow-right" class="icon-xs"></i></a>
+                </div>
+
+                <div class="card service-card animate-on-scroll" id="service-ai-info">
+                    <div class="card__icon card__icon--blue"><i data-lucide="brain" class="icon-md"></i></div>
+                    <h3 class="card__title">Instant AI Legal Information</h3>
+                    <p class="card__text">Get immediate answers to your legal questions powered by advanced AI. Available 24/7 in 23+ Indian languages.</p>
+                    <a href="#ai-assistant" class="btn btn-ghost btn-sm">Try AI Assistant <i data-lucide="arrow-right" class="icon-xs"></i></a>
+                </div>
+
+                <div class="card service-card animate-on-scroll" id="service-documents">
+                    <div class="card__icon"><i data-lucide="file-text" class="icon-md"></i></div>
+                    <h3 class="card__title">Document Drafting &amp; Review</h3>
+                    <p class="card__text">AI-powered drafting of contracts, legal notices, FIRs, RTI applications, and more. Professional review included.</p>
+                    <a href="#documents" class="btn btn-ghost btn-sm">Draft Now <i data-lucide="arrow-right" class="icon-xs"></i></a>
+                </div>
+
+                <div class="card service-card animate-on-scroll" id="service-disputes">
+                    <div class="card__icon card__icon--blue"><i data-lucide="home" class="icon-md"></i></div>
+                    <h3 class="card__title">Property &amp; Family Disputes</h3>
+                    <p class="card__text">Expert assistance for property disputes, family matters, divorce proceedings, custody cases, and inheritance issues.</p>
+                    <a href="#lawyers" class="btn btn-ghost btn-sm">Get Help <i data-lucide="arrow-right" class="icon-xs"></i></a>
+                </div>
+
+                <div class="card service-card animate-on-scroll" id="service-consumer">
+                    <div class="card__icon"><i data-lucide="shield" class="icon-md"></i></div>
+                    <h3 class="card__title">Consumer &amp; Cybercrime Support</h3>
+                    <p class="card__text">File consumer complaints, report cybercrimes, and get guidance on digital fraud, online harassment, and data protection.</p>
+                    <a href="#contact" class="btn btn-ghost btn-sm">Report Issue <i data-lucide="arrow-right" class="icon-xs"></i></a>
+                </div>
+
+                <div class="card service-card animate-on-scroll" id="service-rti">
+                    <div class="card__icon card__icon--blue"><i data-lucide="file-check" class="icon-md"></i></div>
+                    <h3 class="card__title">RTI &amp; Self-Help Forms</h3>
+                    <p class="card__text">Easy-to-use templates for RTI applications, affidavits, declarations, and common legal forms with step-by-step guidance.</p>
+                    <a href="#documents" class="btn btn-ghost btn-sm">Get Forms <i data-lucide="arrow-right" class="icon-xs"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== AI ASSISTANT SECTION ========== -->
+    <section class="section section--dark" id="ai-assistant">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-header__label">AI Legal Advisor</span>
+                <h2 class="section-header__title">Meet Your AI <span class="highlight">Legal Assistant</span></h2>
+                <p class="section-header__subtitle">Powered by advanced AI — get instant legal guidance in your language.</p>
+                <span class="section-header__line"></span>
+            </div>
+
+            <div class="ai-section-layout">
+                <!-- Left: Features -->
+                <div class="ai-features animate-on-scroll">
+                    <div class="badge badge-lg" style="margin-bottom: var(--space-8);">
+                        <i data-lucide="zap" class="icon-xs"></i>
+                        Powered by Advanced AI
+                    </div>
+
+                    <div class="feature-list">
+                        <div class="feature-list__item">
+                            <div class="feature-list__icon"><i data-lucide="languages" class="icon-sm"></i></div>
+                            <div class="feature-list__content">
+                                <h4 class="feature-list__title">Multilingual Support</h4>
+                                <p class="feature-list__desc">Communicate in 23+ Indian languages including Hindi, Bengali, Telugu, Tamil, and more.</p>
+                            </div>
+                        </div>
+                        <div class="feature-list__item">
+                            <div class="feature-list__icon"><i data-lucide="clock" class="icon-sm"></i></div>
+                            <div class="feature-list__content">
+                                <h4 class="feature-list__title">24/7 Availability</h4>
+                                <p class="feature-list__desc">Get instant legal guidance anytime, anywhere. No appointments needed.</p>
+                            </div>
+                        </div>
+                        <div class="feature-list__item">
+                            <div class="feature-list__icon"><i data-lucide="scale" class="icon-sm"></i></div>
+                            <div class="feature-list__content">
+                                <h4 class="feature-list__title">Legal Precedent Analysis</h4>
+                                <p class="feature-list__desc">AI analyzes thousands of cases to provide relevant precedents and insights.</p>
+                            </div>
+                        </div>
+                        <div class="feature-list__item">
+                            <div class="feature-list__icon"><i data-lucide="file-output" class="icon-sm"></i></div>
+                            <div class="feature-list__content">
+                                <h4 class="feature-list__title">Document Generation</h4>
+                                <p class="feature-list__desc">Generate legal documents, notices, and applications directly from the chat.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Chat Interface -->
+                <div class="chat-container animate-on-scroll" id="chat-container">
+                    <div class="chat-header">
+                        <div class="chat-header__title">
+                            <div class="chat-header__dot"></div>
+                            <span>AI Legal Advisor</span>
+                        </div>
+                        <select class="form-group__select chat-lang-select" id="chat-lang-select" aria-label="Chat language" style="width:auto;padding:var(--space-2) var(--space-3);font-size:0.8125rem;">
+                            <option value="en">English</option>
+                            <option value="hi">हिन्दी</option>
+                            <option value="bn">বাংলা</option>
+                            <option value="te">తెలుగు</option>
+                            <option value="ta">தமிழ்</option>
+                            <option value="mr">मराठी</option>
+                        </select>
+                    </div>
+
+                    <div class="chat-messages" id="chat-messages">
+                        <!-- Messages rendered by chatbot.js -->
+                    </div>
+
+                    <div class="chat-quick-actions" id="chat-quick-actions" style="display:flex;flex-wrap:wrap;gap:var(--space-2);padding:0 var(--space-4) var(--space-3);">
+                        <button class="badge badge-lg chip" data-action="rights">🛡️ Know Your Rights</button>
+                        <button class="badge badge-lg chip" data-action="fir">📋 Draft an FIR</button>
+                        <button class="badge badge-lg chip" data-action="rti">📝 RTI Help</button>
+                        <button class="badge badge-lg chip" data-action="lawyer">👨‍⚖️ Find a Lawyer</button>
+                    </div>
+
+                    <div class="chat-input">
+                        <input type="text" class="chat-input__field" id="chat-input" placeholder="Ask a legal question..." autocomplete="off">
+                        <button class="chat-input__send" id="chat-send-btn" aria-label="Send message">
+                            <i data-lucide="send" class="icon-sm"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== DOCUMENT AUTOMATION SECTION ========== -->
+    <section class="section" id="documents">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-header__label">Document Automation</span>
+                <h2 class="section-header__title">AI-Powered <span class="highlight">Document Tools</span></h2>
+                <p class="section-header__subtitle">Generate professional legal documents in minutes, not hours.</p>
+                <span class="section-header__line"></span>
+            </div>
+
+            <div class="tabs animate-on-scroll" id="doc-tabs">
+                <div class="tabs__header tab-header">
+                    <button class="tabs__btn tabs__btn--active tab-btn" data-tab="contracts">
+                        <i data-lucide="file-signature" class="icon-sm"></i> Contract Drafter
+                    </button>
+                    <button class="tabs__btn tab-btn" data-tab="notices">
+                        <i data-lucide="mail" class="icon-sm"></i> Legal Notices
+                    </button>
+                    <button class="tabs__btn tab-btn" data-tab="fir">
+                        <i data-lucide="alert-triangle" class="icon-sm"></i> FIR Assistant
+                    </button>
+                    <button class="tabs__btn tab-btn" data-tab="rti">
+                        <i data-lucide="file-question" class="icon-sm"></i> RTI Builder
+                    </button>
+                    <button class="tabs__btn tab-btn" data-tab="library">
+                        <i data-lucide="folder-open" class="icon-sm"></i> Master Library
+                    </button>
+                </div>
+
+                <div class="tabs__content tab-content-container">
+                    <!-- Contracts Tab -->
+                    <div class="tabs__panel tabs__panel--active tab-content" id="tab-contracts">
+                        <div class="glass-panel" style="padding:var(--space-8);display:grid;grid-template-columns:1fr;gap:var(--space-8);">
+                            <div>
+                                <h3 style="font-family:var(--font-heading);font-size:1.375rem;color:var(--text-primary);margin-bottom:var(--space-3);">Smart Contract Drafter</h3>
+                                <p style="color:var(--text-secondary);line-height:1.7;margin-bottom:var(--space-4);">Generate legally sound contracts tailored to your needs. Our AI ensures compliance with current Indian law.</p>
+                                <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);">
+                                    <span class="badge">NDA</span>
+                                    <span class="badge">Rental Agreement</span>
+                                    <span class="badge">Employment Contract</span>
+                                    <span class="badge">Partnership Deed</span>
+                                    <span class="badge">Service Agreement</span>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="form-group">
+                                    <select class="form-group__select" id="contract-type">
+                                        <option value="">Select Contract Type</option>
+                                        <option value="nda">Non-Disclosure Agreement (NDA)</option>
+                                        <option value="rental">Rental Agreement</option>
+                                        <option value="employment">Employment Contract</option>
+                                        <option value="partnership">Partnership Deed</option>
+                                        <option value="service">Service Agreement</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-group__input" placeholder="Party 1 Name" id="contract-party1" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-group__input" placeholder="Party 2 Name" id="contract-party2" required>
+                                </div>
+                                <button class="btn btn-primary form-submit" id="generate-contract">
+                                    <i data-lucide="sparkles" class="icon-sm"></i> Generate Contract
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Legal Notices Tab -->
+                    <div class="tabs__panel tab-content" id="tab-notices">
+                        <div class="glass-panel" style="padding:var(--space-8);display:grid;grid-template-columns:1fr;gap:var(--space-8);">
+                            <div>
+                                <h3 style="font-family:var(--font-heading);font-size:1.375rem;color:var(--text-primary);margin-bottom:var(--space-3);">Legal Notice Generator</h3>
+                                <p style="color:var(--text-secondary);line-height:1.7;margin-bottom:var(--space-4);">Draft professional legal notices with proper formatting, citations, and legal language.</p>
+                                <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);">
+                                    <span class="badge">Eviction Notice</span><span class="badge">Cease &amp; Desist</span><span class="badge">Demand Notice</span><span class="badge">Reply to Notice</span>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="form-group"><select class="form-group__select"><option value="">Select Notice Type</option><option value="eviction">Eviction Notice</option><option value="cease">Cease &amp; Desist</option><option value="demand">Demand Notice</option><option value="reply">Reply to Notice</option></select></div>
+                                <div class="form-group"><input type="text" class="form-group__input" placeholder="Sender Name" required></div>
+                                <div class="form-group"><textarea class="form-group__textarea" placeholder="Brief description of the matter..." rows="3" required></textarea></div>
+                                <button class="btn btn-primary form-submit"><i data-lucide="sparkles" class="icon-sm"></i> Generate Notice</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FIR Tab -->
+                    <div class="tabs__panel tab-content" id="tab-fir">
+                        <div class="glass-panel" style="padding:var(--space-8);display:grid;grid-template-columns:1fr;gap:var(--space-8);">
+                            <div>
+                                <h3 style="font-family:var(--font-heading);font-size:1.375rem;color:var(--text-primary);margin-bottom:var(--space-3);">FIR Draft Assistant</h3>
+                                <p style="color:var(--text-secondary);line-height:1.7;margin-bottom:var(--space-4);">Create a well-structured FIR draft. Know exactly what to say at the police station.</p>
+                                <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);">
+                                    <span class="badge">Theft / Robbery</span><span class="badge">Assault</span><span class="badge">Cybercrime</span><span class="badge">Fraud</span><span class="badge">Harassment</span>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="form-group"><select class="form-group__select"><option value="">Select Offense Type</option><option value="theft">Theft / Robbery</option><option value="assault">Assault</option><option value="cybercrime">Cybercrime</option><option value="fraud">Fraud / Cheating</option><option value="harassment">Harassment</option></select></div>
+                                <div class="form-group"><input type="text" class="form-group__input" placeholder="Incident Location" required></div>
+                                <div class="form-group"><textarea class="form-group__textarea" placeholder="Describe the incident in detail..." rows="3" required></textarea></div>
+                                <button class="btn btn-primary form-submit"><i data-lucide="sparkles" class="icon-sm"></i> Draft FIR</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RTI Tab -->
+                    <div class="tabs__panel tab-content" id="tab-rti">
+                        <div class="glass-panel" style="padding:var(--space-8);display:grid;grid-template-columns:1fr;gap:var(--space-8);">
+                            <div>
+                                <h3 style="font-family:var(--font-heading);font-size:1.375rem;color:var(--text-primary);margin-bottom:var(--space-3);">RTI Application Builder</h3>
+                                <p style="color:var(--text-secondary);line-height:1.7;margin-bottom:var(--space-4);">File Right to Information applications easily. Frame the right questions for maximum impact.</p>
+                                <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);">
+                                    <span class="badge">Central Govt</span><span class="badge">State Govt</span><span class="badge">Municipal Body</span><span class="badge">Public Authority</span>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="form-group"><select class="form-group__select"><option value="">Select Authority Level</option><option value="central">Central Government</option><option value="state">State Government</option><option value="municipal">Municipal Body</option><option value="public">Public Authority</option></select></div>
+                                <div class="form-group"><input type="text" class="form-group__input" placeholder="Department / Office Name" required></div>
+                                <div class="form-group"><textarea class="form-group__textarea" placeholder="What information do you want to request?" rows="3" required></textarea></div>
+                                <button class="btn btn-primary form-submit"><i data-lucide="sparkles" class="icon-sm"></i> Build RTI Application</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Master Library Tab -->
+                    <div class="tabs__panel tab-content" id="tab-library">
+                        <div class="library-layout">
+                            <!-- Left Sidebar: Browser Controls -->
+                            <div class="library-sidebar">
+                                <div>
+                                    <h3 style="font-family:var(--font-heading);font-size:1.25rem;color:var(--text-primary);margin-bottom:var(--space-2);">Document Browser</h3>
+                                    <p style="color:var(--text-secondary);font-size:0.875rem;line-height:1.5;margin-bottom:var(--space-3);">Search or browse 1,839 templates in 52 categories.</p>
+                                    <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);margin-bottom:var(--space-4);">
+                                        <span class="badge" style="font-size: 0.6875rem; padding: 2px 8px;">1,839 Templates</span>
+                                        <span class="badge badge--blue" style="font-size: 0.6875rem; padding: 2px 8px;">52 Categories</span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group" style="margin-bottom: var(--space-2);">
+                                    <input type="text" class="form-group__input" id="library-search-input" placeholder="🔍 Search templates..." style="margin-bottom: 0;">
+                                </div>
+
+                                <div style="margin-bottom: var(--space-2);">
+                                    <label style="font-size:0.6875rem; text-transform:uppercase; color:var(--text-muted); font-weight:var(--fw-semibold); display:block; margin-bottom:var(--space-2); letter-spacing: 0.05em;">Quick Categories</label>
+                                    <div style="display:flex; flex-wrap:wrap; gap:6px;">
+                                        <span class="badge chip library-quick-chip" data-cat="Agreement" style="font-size:0.75rem; padding: 3px 8px; border-color: rgba(255,255,255,0.06); background: rgba(255,255,255,0.02);">Agreement</span>
+                                        <span class="badge chip library-quick-chip" data-cat="Notice" style="font-size:0.75rem; padding: 3px 8px; border-color: rgba(255,255,255,0.06); background: rgba(255,255,255,0.02);">Notice</span>
+                                        <span class="badge chip library-quick-chip" data-cat="Will" style="font-size:0.75rem; padding: 3px 8px; border-color: rgba(255,255,255,0.06); background: rgba(255,255,255,0.02);">Will</span>
+                                        <span class="badge chip library-quick-chip" data-cat="Power of Attorney" style="font-size:0.75rem; padding: 3px 8px; border-color: rgba(255,255,255,0.06); background: rgba(255,255,255,0.02);">POA</span>
+                                        <span class="badge chip library-quick-chip" data-cat="Civil Pleadings" style="font-size:0.75rem; padding: 3px 8px; border-color: rgba(255,255,255,0.06); background: rgba(255,255,255,0.02);">Civil</span>
+                                        <span class="badge chip library-quick-chip" data-cat="Criminal Pleading" style="font-size:0.75rem; padding: 3px 8px; border-color: rgba(255,255,255,0.06); background: rgba(255,255,255,0.02);">Criminal</span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group" style="margin-bottom: var(--space-4);">
+                                    <label class="form-group__label" for="library-cat-select" style="font-size: 0.75rem; font-weight: var(--fw-semibold); color: var(--text-secondary);">Browse Category</label>
+                                    <select class="form-group__select" id="library-cat-select" style="font-size:0.875rem;">
+                                        <option value="">Select Category (52 available)</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group" style="margin-bottom: 0; display: flex; flex-direction: column; flex-grow: 1;">
+                                    <label class="form-group__label" style="font-size: 0.75rem; font-weight: var(--fw-semibold); color: var(--text-secondary);">Templates List</label>
+                                    <div id="library-doc-list" style="border: 1px solid var(--border-glass); border-radius: var(--radius-sm); background: rgba(0,0,0,0.15); max-height: 280px; overflow-y: auto; display: flex; flex-direction: column; gap: 1px; min-height: 120px;">
+                                        <div style="padding: var(--space-4); color: var(--text-muted); font-size: 0.8125rem; text-align: center;">
+                                            Select a category or search to view templates.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right Content: Preview Workspace -->
+                            <div class="library-content" id="library-workspace-panel">
+                                <div id="library-placeholder" style="text-align: center; padding: var(--space-8); display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
+                                    <div style="background: rgba(200, 169, 81, 0.1); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-4); border: 1px solid rgba(200, 169, 81, 0.2);">
+                                        <i data-lucide="folder-open" style="width: 40px; height: 40px; color: var(--accent-gold);"></i>
+                                    </div>
+                                    <h4 style="font-family: var(--font-heading); color: var(--text-primary); font-size: 1.25rem; margin-bottom: var(--space-2);">Document Preview Workspace</h4>
+                                    <p style="color: var(--text-secondary); max-width: 400px; line-height: 1.6; font-size: 0.875rem;">Select a document category and draft from the left panel, or search for keywords to preview, copy, or download templates instantly.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== LEGAL RESEARCH SECTION ========== -->
+    <section class="section section--dark" id="research">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-header__label">Intelligent Research</span>
+                <h2 class="section-header__title">AI-Enhanced <span class="highlight">Legal Research</span></h2>
+                <p class="section-header__subtitle">Search, analyze, and predict — powered by India's most comprehensive case law database.</p>
+                <span class="section-header__line"></span>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="glass-panel animate-on-scroll" style="padding:var(--space-6);margin-bottom:var(--space-10);">
+                <div style="display:flex;gap:var(--space-3);align-items:center;">
+                    <i data-lucide="search" class="icon-md" style="color:var(--text-muted);flex-shrink:0;"></i>
+                    <input type="text" class="form-group__input" id="case-search-input" placeholder="Search case law, statutes, or legal topics..." style="margin-bottom:0;flex:1;">
+                    <button class="btn btn-primary" id="case-search-btn">Search</button>
+                </div>
+                <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);margin-top:var(--space-4);">
+                    <span class="badge badge-lg">Supreme Court</span>
+                    <span class="badge badge-lg">High Court</span>
+                    <span class="badge badge-lg">IPC Sections</span>
+                    <span class="badge badge--blue badge-lg">BNS 2023</span>
+                    <span class="badge badge-lg">Constitution</span>
+                </div>
+            </div>
+
+            <!-- Federated Open Databases from Awesome-Legal-Data -->
+            <div class="glass-panel animate-on-scroll" style="padding:var(--space-6);margin-bottom:var(--space-10);">
+                <h3 style="font-family:var(--font-heading);font-size:1.125rem;color:var(--text-primary);margin-bottom:var(--space-4);display:flex;align-items:center;gap:var(--space-2);">
+                    <i data-lucide="database" class="icon-sm" style="color:var(--accent-gold);"></i> Connected Open Legal Data Sources
+                </h3>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:var(--space-4);">
+                    <a href="https://www.indiacode.nic.in/" target="_blank" rel="noopener" class="card" style="padding:var(--space-4);display:flex;flex-direction:column;gap:var(--space-2);border-color:rgba(255,255,255,0.06);background:rgba(255,255,255,0.01);text-decoration:none;">
+                        <div style="display:flex;align-items:center;width:100%;">
+                            <strong style="color:var(--text-primary);font-size:0.875rem;">India Code</strong>
+                            <i data-lucide="external-link" class="icon-xs" style="color:var(--accent-gold);margin-left:auto;"></i>
+                        </div>
+                        <p style="font-size:0.75rem;color:var(--text-secondary);margin:0;line-height:1.4;">Official repository for Central and State Legislative Acts &amp; Regulations.</p>
+                    </a>
+                    <a href="https://indiankanoon.org/" target="_blank" rel="noopener" class="card" style="padding:var(--space-4);display:flex;flex-direction:column;gap:var(--space-2);border-color:rgba(255,255,255,0.06);background:rgba(255,255,255,0.01);text-decoration:none;">
+                        <div style="display:flex;align-items:center;width:100%;">
+                            <strong style="color:var(--text-primary);font-size:0.875rem;">Indian Kanoon</strong>
+                            <i data-lucide="external-link" class="icon-xs" style="color:var(--accent-gold);margin-left:auto;"></i>
+                        </div>
+                        <p style="font-size:0.75rem;color:var(--text-secondary);margin:0;line-height:1.4;">Comprehensive search engine for Indian Laws, Supreme Court, and High Court judgments.</p>
+                    </a>
+                    <a href="https://ecourts.gov.in/" target="_blank" rel="noopener" class="card" style="padding:var(--space-4);display:flex;flex-direction:column;gap:var(--space-2);border-color:rgba(255,255,255,0.06);background:rgba(255,255,255,0.01);text-decoration:none;">
+                        <div style="display:flex;align-items:center;width:100%;">
+                            <strong style="color:var(--text-primary);font-size:0.875rem;">eCourts / NJDG</strong>
+                            <i data-lucide="external-link" class="icon-xs" style="color:var(--accent-gold);margin-left:auto;"></i>
+                        </div>
+                        <p style="font-size:0.75rem;color:var(--text-secondary);margin:0;line-height:1.4;">Real-time case status, order updates, and data grids from all Indian courts.</p>
+                    </a>
+                    <a href="https://opennyai.org/" target="_blank" rel="noopener" class="card" style="padding:var(--space-4);display:flex;flex-direction:column;gap:var(--space-2);border-color:rgba(255,255,255,0.06);background:rgba(255,255,255,0.01);text-decoration:none;">
+                        <div style="display:flex;align-items:center;width:100%;">
+                            <strong style="color:var(--text-primary);font-size:0.875rem;">OpenNyAI NLP</strong>
+                            <i data-lucide="external-link" class="icon-xs" style="color:var(--accent-gold);margin-left:auto;"></i>
+                        </div>
+                        <p style="font-size:0.75rem;color:var(--text-secondary);margin:0;line-height:1.4;">Curated datasets, entity extraction tools, and models tailored for Indian legal text processing.</p>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Research Feature Cards -->
+            <div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                <div class="card animate-on-scroll" id="research-caselaw">
+                    <div class="card__icon card__icon--blue"><i data-lucide="library" class="icon-md"></i></div>
+                    <h3 class="card__title">Case Law Search</h3>
+                    <p class="card__text">Access Supreme Court, High Court, and District Court judgments. AI-generated summaries for quick understanding.</p>
+                    <div class="stats-bar__item" style="text-align:left;margin-top:var(--space-4);">
+                        <span class="stats-bar__number stat-number" data-target="50000">0</span>
+                        <span class="stats-bar__label">Cases Indexed</span>
+                    </div>
+                </div>
+
+                <div class="card animate-on-scroll" id="research-predictor">
+                    <div class="card__icon"><i data-lucide="trending-up" class="icon-md"></i></div>
+                    <h3 class="card__title">AI Case Predictor</h3>
+                    <p class="card__text">Predict win probabilities based on historical precedents, judge patterns, and case similarities.</p>
+                    <div class="stats-bar__item" style="text-align:left;margin-top:var(--space-4);">
+                        <span class="stats-bar__number stat-number" data-target="94">0</span>
+                        <span class="stats-bar__label">% Accuracy Rate</span>
+                    </div>
+                </div>
+
+                <div class="card animate-on-scroll" id="research-comparison">
+                    <div class="card__icon card__icon--blue"><i data-lucide="git-compare" class="icon-md"></i></div>
+                    <h3 class="card__title">Case Comparison</h3>
+                    <p class="card__text">Compare cases side-by-side with AI similarity scoring. Find the most relevant precedents for your case.</p>
+                    <div class="stats-bar__item" style="text-align:left;margin-top:var(--space-4);">
+                        <span class="stats-bar__number stat-number" data-target="98">0</span>
+                        <span class="stats-bar__label">% Match Precision</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== LAWYER MARKETPLACE ========== -->
+    <section class="section" id="lawyers">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-header__label">Lawyer Marketplace</span>
+                <h2 class="section-header__title">Find the Right <span class="highlight">Lawyer</span></h2>
+                <p class="section-header__subtitle">Connect with verified legal professionals matching your specific needs.</p>
+                <span class="section-header__line"></span>
+            </div>
+
+            <!-- Filters -->
+            <div class="animate-on-scroll" style="display:flex;flex-wrap:wrap;gap:var(--space-3);justify-content:center;margin-bottom:var(--space-10);">
+                <button class="btn btn-glass btn-sm filter-btn active" data-filter="all">All</button>
+                <button class="btn btn-glass btn-sm filter-btn" data-filter="family">Family Law</button>
+                <button class="btn btn-glass btn-sm filter-btn" data-filter="property">Property</button>
+                <button class="btn btn-glass btn-sm filter-btn" data-filter="criminal">Criminal</button>
+                <button class="btn btn-glass btn-sm filter-btn" data-filter="corporate">Corporate</button>
+                <button class="btn btn-glass btn-sm filter-btn" data-filter="civil">Civil</button>
+            </div>
+
+            <!-- Lawyer Cards -->
+            <div class="services-grid lawyers-grid">
+                <div class="lawyer-card animate-on-scroll" data-category="family" id="lawyer-1">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-4);">
+                        <div class="lawyer-card__photo" style="width:64px;height:64px;display:flex;align-items:center;justify-content:center;background:var(--gradient-gold);color:var(--bg-primary);font-weight:700;font-size:1.25rem;">AK</div>
+                        <span class="badge badge--success"><i data-lucide="badge-check" class="icon-xs"></i> Verified</span>
+                    </div>
+                    <h3 class="lawyer-card__name">Adv. Anita Krishnan</h3>
+                    <span class="lawyer-card__specialty">Family Law</span>
+                    <div class="lawyer-card__rating">
+                        <span class="lawyer-card__star">★★★★★</span>
+                        <span class="lawyer-card__rating-value">4.9 (127)</span>
+                    </div>
+                    <div class="lawyer-card__location"><i data-lucide="map-pin" class="icon-xs"></i> New Delhi &nbsp;·&nbsp; <i data-lucide="briefcase" class="icon-xs"></i> 12 yrs</div>
+                    <a href="#contact" class="btn btn-outline lawyer-card__cta">Book Consultation</a>
+                </div>
+
+                <div class="lawyer-card animate-on-scroll" data-category="property" id="lawyer-2">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-4);">
+                        <div class="lawyer-card__photo" style="width:64px;height:64px;display:flex;align-items:center;justify-content:center;background:var(--gradient-blue);color:#fff;font-weight:700;font-size:1.25rem;">RS</div>
+                        <span class="badge badge--success"><i data-lucide="badge-check" class="icon-xs"></i> Verified</span>
+                    </div>
+                    <h3 class="lawyer-card__name">Adv. Rajesh Sharma</h3>
+                    <span class="lawyer-card__specialty">Property Law</span>
+                    <div class="lawyer-card__rating">
+                        <span class="lawyer-card__star">★★★★★</span>
+                        <span class="lawyer-card__rating-value">4.8 (98)</span>
+                    </div>
+                    <div class="lawyer-card__location"><i data-lucide="map-pin" class="icon-xs"></i> Mumbai &nbsp;·&nbsp; <i data-lucide="briefcase" class="icon-xs"></i> 18 yrs</div>
+                    <a href="#contact" class="btn btn-outline lawyer-card__cta">Book Consultation</a>
+                </div>
+
+                <div class="lawyer-card animate-on-scroll" data-category="criminal" id="lawyer-3">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-4);">
+                        <div class="lawyer-card__photo" style="width:64px;height:64px;display:flex;align-items:center;justify-content:center;background:var(--gradient-gold);color:var(--bg-primary);font-weight:700;font-size:1.25rem;">PD</div>
+                        <span class="badge badge--success"><i data-lucide="badge-check" class="icon-xs"></i> Verified</span>
+                    </div>
+                    <h3 class="lawyer-card__name">Adv. Priya Deshmukh</h3>
+                    <span class="lawyer-card__specialty">Criminal Law</span>
+                    <div class="lawyer-card__rating">
+                        <span class="lawyer-card__star">★★★★☆</span>
+                        <span class="lawyer-card__rating-value">4.7 (85)</span>
+                    </div>
+                    <div class="lawyer-card__location"><i data-lucide="map-pin" class="icon-xs"></i> Bangalore &nbsp;·&nbsp; <i data-lucide="briefcase" class="icon-xs"></i> 15 yrs</div>
+                    <a href="#contact" class="btn btn-outline lawyer-card__cta">Book Consultation</a>
+                </div>
+            </div>
+
+            <div style="text-align:center;margin-top:var(--space-10);">
+                <a href="#contact" class="btn btn-outline btn-lg"><i data-lucide="users" class="icon-sm"></i> View All Lawyers</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== KNOWLEDGE HUB & WHY CHOOSE US ========== -->
+    <section class="section section--dark" id="knowledge">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-header__label">Knowledge Hub</span>
+                <h2 class="section-header__title">Legal Tips &amp; <span class="highlight">Insights</span></h2>
+                <p class="section-header__subtitle">Stay informed with expert content curated for you.</p>
+                <span class="section-header__line"></span>
+            </div>
+
+            <div class="services-grid" style="grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-bottom:var(--space-16);">
+                <div class="card animate-on-scroll">
+                    <div class="card__icon"><i data-lucide="lightbulb" class="icon-md"></i></div>
+                    <h3 class="card__title">Legal Tips &amp; Guides</h3>
+                    <p class="card__text">Step-by-step guides on common legal processes — from filing complaints to understanding your rights.</p>
+                    <a href="#" class="btn btn-ghost btn-sm">Read Guides <i data-lucide="arrow-right" class="icon-xs"></i></a>
+                </div>
+                <div class="card animate-on-scroll">
+                    <div class="card__icon card__icon--blue"><i data-lucide="trophy" class="icon-md"></i></div>
+                    <h3 class="card__title">Success Stories</h3>
+                    <p class="card__text">Real cases where LegalAidIndia helped individuals and families achieve justice. Be inspired.</p>
+                    <a href="#" class="btn btn-ghost btn-sm">View Stories <i data-lucide="arrow-right" class="icon-xs"></i></a>
+                </div>
+                <div class="card animate-on-scroll">
+                    <div class="card__icon"><i data-lucide="radio" class="icon-md"></i></div>
+                    <h3 class="card__title">Live Q&amp;A Sessions</h3>
+                    <p class="card__text">Join weekly live sessions with expert lawyers. Ask questions, get answers in real-time.</p>
+                    <a href="#" class="btn btn-ghost btn-sm">Join Live <i data-lucide="arrow-right" class="icon-xs"></i></a>
+                </div>
+                <div class="card animate-on-scroll">
+                    <div class="card__icon card__icon--blue"><i data-lucide="newspaper" class="icon-md"></i></div>
+                    <h3 class="card__title">Legal News Feed</h3>
+                    <p class="card__text">Stay updated with the latest changes in Indian law, landmark judgments, and policy updates.</p>
+                    <a href="#" class="btn btn-ghost btn-sm">Read News <i data-lucide="arrow-right" class="icon-xs"></i></a>
+                </div>
+            </div>
+
+            <!-- Why Choose Us -->
+            <div class="section-header animate-on-scroll">
+                <span class="section-header__label">Why LegalAidIndia</span>
+                <h2 class="section-header__title">Why <span class="highlight">Choose Us</span>?</h2>
+                <span class="section-header__line"></span>
+            </div>
+
+            <div class="services-grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));">
+                <div class="card animate-on-scroll" style="text-align:center;">
+                    <div class="card__icon" style="margin:0 auto var(--space-6);"><i data-lucide="zap" class="icon-md"></i></div>
+                    <h3 class="card__title">Fast &amp; Reliable</h3>
+                    <p class="card__text">Get legal support in minutes, not days. AI-powered speed with expert-grade quality and reliability.</p>
+                </div>
+                <div class="card animate-on-scroll" style="text-align:center;">
+                    <div class="card__icon card__icon--blue" style="margin:0 auto var(--space-6);"><i data-lucide="wallet" class="icon-md"></i></div>
+                    <h3 class="card__title">Affordable &amp; Transparent</h3>
+                    <p class="card__text">No hidden fees. Transparent pricing with free initial consultations. Justice shouldn't be expensive.</p>
+                </div>
+                <div class="card animate-on-scroll" style="text-align:center;">
+                    <div class="card__icon" style="margin:0 auto var(--space-6);"><i data-lucide="heart-handshake" class="icon-md"></i></div>
+                    <h3 class="card__title">Empowering Your Rights</h3>
+                    <p class="card__text">We believe in empowering you with knowledge. Understand your rights and take informed decisions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTACT SECTION ========== -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-header__label">Get In Touch</span>
+                <h2 class="section-header__title">Review Your Case <span class="highlight">With Us</span></h2>
+                <p class="section-header__subtitle">Consultations are free of charge. Tell us about your situation.</p>
+                <span class="section-header__line"></span>
+            </div>
+
+            <div style="display:grid;grid-template-columns:1fr;gap:var(--space-10);max-width:1000px;margin:0 auto;">
+                <!-- Contact Info -->
+                <div class="glass-panel animate-on-scroll" style="padding:var(--space-8);">
+                    <h3 style="font-family:var(--font-heading);font-size:1.375rem;color:var(--text-primary);margin-bottom:var(--space-6);">Contact Information</h3>
+
+                    <div class="footer__contact-item"><span class="footer__contact-icon"><i data-lucide="map-pin" class="icon-sm"></i></span><div><strong style="color:var(--text-primary);">Address</strong><br>444 Street 8, New Delhi, India</div></div>
+                    <div class="footer__contact-item"><span class="footer__contact-icon"><i data-lucide="phone" class="icon-sm"></i></span><div><strong style="color:var(--text-primary);">Phone</strong><br><a href="tel:+918510083883" style="color:var(--accent-gold);text-decoration:none;">+91 85100 83883</a></div></div>
+                    <div class="footer__contact-item"><span class="footer__contact-icon"><i data-lucide="mail" class="icon-sm"></i></span><div><strong style="color:var(--text-primary);">Email</strong><br><a href="mailto:mail@legalaidindia.org" style="color:var(--accent-gold);text-decoration:none;">mail@legalaidindia.org</a></div></div>
+                    <div class="footer__contact-item"><span class="footer__contact-icon"><i data-lucide="clock" class="icon-sm"></i></span><div><strong style="color:var(--text-primary);">Working Hours</strong><br>24 × 7 (Except Sunday)</div></div>
+
+                    <div class="footer__socials" style="margin-top:var(--space-6);">
+                        <a href="https://instagram.com/LegalAidsIndia" class="footer__social-link" aria-label="Instagram" target="_blank" rel="noopener"><i data-lucide="instagram" class="icon-sm"></i></a>
+                        <a href="https://facebook.com/LegalAidsIndia" class="footer__social-link" aria-label="Facebook" target="_blank" rel="noopener"><i data-lucide="facebook" class="icon-sm"></i></a>
+                        <a href="https://twitter.com/LegalAidsIndia" class="footer__social-link" aria-label="Twitter" target="_blank" rel="noopener"><i data-lucide="twitter" class="icon-sm"></i></a>
+                        <a href="https://linkedin.com/company/LegalAidIndia" class="footer__social-link" aria-label="LinkedIn" target="_blank" rel="noopener"><i data-lucide="linkedin" class="icon-sm"></i></a>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <form class="glass-panel animate-on-scroll" id="contact-form" style="padding:var(--space-8);">
+                    <div class="form-group"><input type="text" class="form-group__input" id="contact-name" placeholder="Your Full Name *" required></div>
+                    <div class="form-group"><input type="email" class="form-group__input" id="contact-email" placeholder="Your Email Address *" required></div>
+                    <div class="form-group"><input type="text" class="form-group__input" id="contact-subject" placeholder="Subject"></div>
+                    <div class="form-group"><textarea class="form-group__textarea" id="contact-message" placeholder="Tell us about your case or question... *" rows="5" required></textarea></div>
+                    <button type="submit" class="btn btn-primary btn-lg form-submit" id="contact-submit">
+                        <i data-lucide="send" class="icon-sm"></i> Send Message
+                    </button>
+                    <p style="text-align:center;font-size:0.8125rem;color:var(--text-muted);margin-top:var(--space-4);display:flex;align-items:center;justify-content:center;gap:var(--space-2);">
+                        <i data-lucide="shield-check" class="icon-xs"></i> Your information is confidential and protected.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div>
+                    <a href="#" class="navbar__logo" style="margin-bottom:var(--space-6);display:inline-flex;">
+                        <div class="navbar__logo-icon">⚖</div>
+                        <span class="navbar__logo-text">LegalAid<span>India</span></span>
+                    </a>
+                    <p class="footer__about-text">Your Trusted Online Legal Partner. Bridging the gap between justice and accessibility with AI-powered legal solutions.</p>
+                    <div class="footer__socials">
+                        <a href="https://instagram.com/LegalAidsIndia" class="footer__social-link" aria-label="Instagram" target="_blank" rel="noopener"><i data-lucide="instagram" class="icon-sm"></i></a>
+                        <a href="https://facebook.com/LegalAidsIndia" class="footer__social-link" aria-label="Facebook" target="_blank" rel="noopener"><i data-lucide="facebook" class="icon-sm"></i></a>
+                        <a href="https://twitter.com/LegalAidsIndia" class="footer__social-link" aria-label="Twitter" target="_blank" rel="noopener"><i data-lucide="twitter" class="icon-sm"></i></a>
+                        <a href="https://linkedin.com/company/LegalAidIndia" class="footer__social-link" aria-label="LinkedIn" target="_blank" rel="noopener"><i data-lucide="linkedin" class="icon-sm"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="footer__col-title">Quick Links</h4>
+                    <ul class="footer__links">
+                        <li><a href="#services" class="footer__link">Our Services</a></li>
+                        <li><a href="#ai-assistant" class="footer__link">AI Assistant</a></li>
+                        <li><a href="#documents" class="footer__link">Document Tools</a></li>
+                        <li><a href="#research" class="footer__link">Legal Research</a></li>
+                        <li><a href="#lawyers" class="footer__link">Find Lawyers</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer__col-title">Services</h4>
+                    <ul class="footer__links">
+                        <li><a href="#contact" class="footer__link">Legal Consultation</a></li>
+                        <li><a href="#documents" class="footer__link">Contract Drafting</a></li>
+                        <li><a href="#documents" class="footer__link">RTI Applications</a></li>
+                        <li><a href="#contact" class="footer__link">Consumer Complaints</a></li>
+                        <li><a href="#contact" class="footer__link">Cybercrime Support</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer__col-title">Contact Us</h4>
+                    <div class="footer__contact-item"><span class="footer__contact-icon"><i data-lucide="map-pin" class="icon-xs"></i></span> 444 Street 8, New Delhi</div>
+                    <div class="footer__contact-item"><span class="footer__contact-icon"><i data-lucide="phone" class="icon-xs"></i></span> <a href="tel:+918510083883" style="color:inherit;text-decoration:none;">+91 85100 83883</a></div>
+                    <div class="footer__contact-item"><span class="footer__contact-icon"><i data-lucide="mail" class="icon-xs"></i></span> <a href="mailto:mail@legalaidindia.org" style="color:inherit;text-decoration:none;">mail@legalaidindia.org</a></div>
+                    <div class="footer__contact-item"><span class="footer__contact-icon"><i data-lucide="clock" class="icon-xs"></i></span> 24 × 7 (Except Sunday)</div>
+                    <div class="badge badge--success badge-lg" style="margin-top:var(--space-4);"><i data-lucide="badge-check" class="icon-xs"></i> Free Consultations</div>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p class="footer__copyright">&copy; <span class="copyright-year" id="footer-year">2024</span> LegalAidIndia.org — All Rights Reserved.</p>
+                <div class="footer__bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll-to-Top Button -->
+    <button class="scroll-top scroll-to-top" id="scroll-top" aria-label="Scroll to top">
+        <i data-lucide="arrow-up" class="icon-sm"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/chatbot.js"></script>
+    <script src="js/services.js"></script>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        });
+    </script>
+</body>
+</html>
